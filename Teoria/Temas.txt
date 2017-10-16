@@ -1,5 +1,6 @@
 
 0 : Introducción
 1 : Tipos de datos básicos y sus operaciones
-2 : Estructuras de control
-3 : Funciones
+2 : Operaciones básicas y funciones matemáticas
+3 : Estructuras de control
+4 : Funciones
