@@ -12,7 +12,7 @@
 
 #ifdef _WIN32       // Si estamos en windows
 #   define LIMPIAR_PANTALLA "cls"
-#else
+#else // !_WIN32  Si no estamos en windows
 #   define LIMPIAR_PANTALLA "clear"
 #endif
 
@@ -180,7 +180,7 @@ static int leer_numero(int maximo)
 _Noreturn static
 void imprimir_instrucciones(void)
 {
-    puts("                -*-*Numero Magico*-*-              \n"
+    puts("                -*-*Numero Mágico*-*-              \n"
          "El programa solo debe recibir 0 o 1 argumento(s),  \n"
          "en caso de recibir alguno, este debe ser numérico  \n"
          "y al menos mayor que 1. Dicho número será usado en \n"

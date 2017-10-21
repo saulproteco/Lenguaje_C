@@ -2,6 +2,13 @@
  * Funciones en C *
  *================*/
 
+/**
+ * Autor: Martínez Ortíz Saúl Axel
+ * Dificultad: Intermedio-Avanzado.
+ * Requisitos: Arreglos, estructuras de control.
+ * Estilo de código: Linux modificado (4 espacios por tab).
+ */
+
 #include <stdio.h>    // printf, puts
 #include <stdlib.h>   // srand, rand, calloc
 #include <stdbool.h>  // true, false
@@ -45,7 +52,7 @@ void saluda(void);      // Prototipo de una función llamada 'saluda'
  *      <Código>                                                       *
  *  }                                                                  */
 
-void saluda()   // Cuerpo de la función 'saluda'
+void saluda(void)   // Cuerpo de la función 'saluda'
 {
     puts("¡Hola, estoy dentro de una función!");
 }

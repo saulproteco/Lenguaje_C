@@ -3,6 +3,13 @@
  *            C              *
  *===========================*/
 
+/**
+ * Autor: Martínez Ortíz Saúl Axel
+ * Dificultad: Básico.
+ * Requisitos: Bases de lenguaje C.
+ * Estilo de código: Microsoft.
+ */
+
 #include <stdio.h>  // printf, getchar
 #include <stdlib.h> // EXIT_SUCCESS
 

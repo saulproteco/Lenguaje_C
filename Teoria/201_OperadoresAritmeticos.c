@@ -5,6 +5,13 @@
  * la validez de los datos ingresados         *
  *============================================*/
 
+/**
+ * Autor: Martínez Ortíz Saúl Axel
+ * Dificultad: Básico.
+ * Requisitos: Manejo de entrada/salida, funciones.
+ * Estilo de código: Miscelaneo.
+ */
+
 #include <stdio.h>  // puts, printf, getchar, scanf
 #include <stdlib.h> // EXIT_SUCCESS, EXIT_FAILURE
 

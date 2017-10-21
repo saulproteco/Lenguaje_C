@@ -3,6 +3,13 @@
  * por categorias.                                          *
  *==========================================================*/
 
+/**
+ * Autor: Martínez Ortíz Saúl Axel
+ * Dificultad: Básico.
+ * Requisitos: Bases de lenguaje C.
+ * Estilo de código: GNU.
+ */
+
 /* Sentencias de control */
 while
 for

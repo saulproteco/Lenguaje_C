@@ -5,6 +5,13 @@
 #include <stdio.h>      // puts, getchar
 #include <stdlib.h>     // EXIT_SUCCESS (macro con valor 0)
 
+/**
+ * Autor: Martínez Ortíz Saúl Axel
+ * Dificultad: Básico.
+ * Requisitos: Bases de programación.
+ * Estilo de código: GNU.
+ */
+
 // La función main es el punto de entrada del programa,
 // y por tanto es la que cumple la labor de interfaz entre
 // el proceso que lo mandó a llamar (generalmente la consola)
@@ -20,7 +27,9 @@
 //          - Un entero que indica el estado de finalización del programa.
 //            (por convención, 0 significa éxito y cualquier otro número
 //            significa fallo).
-int main(int contador_argumentos, char * vector_argumentos[])
+
+int // Tipo de retorno entero por defecto, se puede omitir
+main (int contador_argumentos, char * vector_argumentos[])
 {
     puts("¡Hola mundo!"); // Imprime el mensaje.
 
@@ -29,12 +38,3 @@ int main(int contador_argumentos, char * vector_argumentos[])
     return EXIT_SUCCESS;    // Regresa 0, es decir éxito
 }
 
-// Formas alternativas de la función main
-// int main(void)   <---+
-// int main()       <---+
-//     main()       <---+-- Equivalentes
-//     main(void)   <---+
-//
-// void main()                          <-+
-// void main(void)                      <-+- Se tiene que salir con la función exit
-// void main(int argc, char * argv[])   <-+

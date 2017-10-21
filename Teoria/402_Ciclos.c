@@ -6,6 +6,13 @@
  * repetición de lenguaje  C.                *
  *===========================================*/
 
+/**
+ * Autor: Martínez Ortíz Saúl Axel
+ * Dificultad: Básico.
+ * Requisitos: Bases de lenguaje C.
+ * Estilo de código: Linux modificado (4 espacios por tab).
+ */
+
 #include <stdio.h>  // printf, puts
 #include <stdlib.h> // EXIT_SUCCESS
 

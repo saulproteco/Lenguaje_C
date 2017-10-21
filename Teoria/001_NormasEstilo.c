@@ -4,6 +4,13 @@
  *   proyectos de software libre.   *
  *==================================*/
 
+/**
+ * Autor: Martínez Ortíz Saúl Axel
+ * Dificultad: Básico.
+ * Requisitos: Bases de programación.
+ * Estilo de código: Miscelaneo.
+ */
+
 // Las normativas de estilo aquí presentadas son aplicadas al código
 // para mejorar la legibilidad del mismo en la mayoría de los casos.
 // Es recomendable codificar desde el inicio con alguno de los estilos
@@ -33,7 +40,7 @@
 
    }   // Cierra bloque externo
 
-=> GNU y google (4 espacios):
+=> GNU, google y microsoft (4 espacios):
 
    {   // Abre bloque externo
 
@@ -65,7 +72,7 @@
        código
    }
 
-=> Linux:
+=> Linux y Microsoft:
    // El tipo de retorno va en la misma línea
    tipo_retorno nombre_funcion(tipo_1 argumento1, tipo_2 argumento2,
                                tipo_3 argumento3, tipo_3 argumento3)
@@ -101,7 +108,7 @@ while (condición)
     código
   }
 
-do  // No hay otra forma para el do
+do  // No hay otra forma para el do, pues se considera que ponerlo sin llavez es confuso
   {
     código
   }
@@ -186,6 +193,50 @@ case DOS:           // Sin indentación en las etiquetas
 
 }
 
+=> Microsoft:
+
+if (condición) // Siempre se ponen las llavez
+{
+    código
+}
+
+if (condición)
+{
+    código
+}
+else
+{
+    más código
+}
+
+while (condición)
+{
+    código
+}
+
+do  // No hay otra forma para el do, pues se considera que ponerlo sin llavez es confuso
+{
+    código
+}
+while (condición);
+
+switch (condición)
+{
+
+  case UNO: // Dos niveles de indentación
+
+    HacerAlgo();
+    break;
+
+  case DOS:
+    {
+      HacerOtraCosa();  // Funciones en mayúscula
+      UnaCosaMas();
+    }
+    break;
+
+}
+
 /* Typedef's sobre estructuras */
 
 => Google:
@@ -225,9 +276,18 @@ case DOS:           // Sin indentación en las etiquetas
 
     struct mi_estructura var1;
 
+=> Microsoft:
+
+    typedef struct miestructura
+    {
+        Datos
+    } MiEstructura;
+
+    MiEstructura var1;
+
 /* ##### Espacios entre operadores ##### */
 
-GNU, Linux y Google: (Por fin se ponen de acuerdo)
+GNU, Linux, Google y Microsoft: (Por fin se ponen de acuerdo)
     Siempre usar espacios al rededor de los operadores binarios para
     mejorar la legibilidad. No son necesarios espacios entre paréntesis
     o corchetes.

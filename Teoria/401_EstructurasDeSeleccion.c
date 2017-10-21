@@ -3,6 +3,13 @@
  *        lenguaje C        *
  *==========================*/
 
+/**
+ * Autor: Martínez Ortíz Saúl Axel
+ * Dificultad: Básico.
+ * Requisitos: Bases de lenguaje C.
+ * Estilo de código: Miscelaneo.
+ */
+
 #include <stdio.h>  // printf
 #include <stdlib.h> // EXIT_SUCCESS
 

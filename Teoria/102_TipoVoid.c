@@ -2,10 +2,18 @@
  * El tipo especial "void" *
  *=========================*/
 
+/**
+ * Autor: Martínez Ortíz Saúl Axel
+ * Dificultad: Básico.
+ * Requisitos: Bases de lenguaje C.
+ * Estilo de código: GNU.
+ */
+
 #include <stdio.h>  // printf, getchar
 #include <stdlib.h> // EXIT_SUCCESS
 
-int main(void)
+int
+main (void)
 {
     /* El tipo void es un tipo de dato especial que no entra dentro de  *
      * la clasificación del resto. Esto se debe a que es un tipo del    *
@@ -29,7 +37,7 @@ int main(void)
     // parte del compilador el cual puede responder con alguna
     // advertencia.
 
-    printf("El tamaño de \"void\" es: %zu\n", sizeof(void));
+    printf ("El tamaño de \"void\" es: %zu\n", sizeof(void));
 
     // Esa última caracteristica permite que, aunque una variable void
     // no pueda ser usada, el crear y manipular punteros a void sea
@@ -76,7 +84,7 @@ int main(void)
     // parénntesis justo antes de la expresión cuyo valor se quiere
     // suprimir.
 
-    (void) printf("El retorno del printf se va a ignorar\n");
+    (void) printf ("El retorno del printf se va a ignorar\n");
 
     // Suprimir valores hace imposible usarlos en una expresión pero
     // también silencia las advertencias del compilador sugiriendonos hacer

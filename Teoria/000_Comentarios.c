@@ -2,7 +2,15 @@
  * Inserción de comentarios *
  *==========================*/
 
-#include <stdio.h>
+/**
+ * Autor: Martínez Ortíz Saúl Axel
+ * Dificultad: Básico.
+ * Requisitos: Bases de programación y cadenas.
+ * Estilo de código: Personalizado.
+ */
+
+#include <stdio.h>  // printf
+#include <stdlib.h> // EXIT_SUCCESS
 
 /*
    Esto es un comentario de bloque,
@@ -28,5 +36,5 @@ int main(void)
                   |                                       |
                   v <-----------------------------------> v                */
     printf("Esto" /* es comentario en medio de una cadena */ " es más código");
-    return 0;
+    return EXIT_SUCCESS;
 }

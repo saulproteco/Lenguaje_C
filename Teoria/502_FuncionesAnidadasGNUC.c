@@ -2,6 +2,13 @@
  * Funciones anidadas *
  *====================*/
 
+/**
+ * Autor: Martínez Ortíz Saúl Axel
+ * Dificultad: Intermedio.
+ * Requisitos: Funciones, apuntadores a funciones..
+ * Estilo de código: Linux modificado (4 espacios por tab).
+ */
+
 
 /* Las funciones anidadas son una característica extendida de C que provee *
  * el compilador de GNU. Gracias a esta característica es posible trabajar *
@@ -25,7 +32,8 @@
 
 void funcion_normal(void);
 
-int main(void) {
+int main(void)
+{
     srand(time(NULL));
 
     // Las funciones anidadas se pueden declarar y usar de manera idéntica

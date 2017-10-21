@@ -1,6 +1,13 @@
 
-0 : Introducción
-1 : Tipos de datos y conversión entre tipos
+0 : Introducción, compilación y miselaneos.
+1 : Tipos de datos, conversión entre tipos y alias.
 2 : Operaciones básicas y funciones matemáticas
-3 : Estructuras de control
-4 : Funciones
+3 : Lectura y escritura
+4 : Estructuras de control
+5 : Funciones
+6 : Cadenas, secuencias de escape y conjuntos de caracteres
+7 : Apuntadores
+8 : Memoria dinámica
+9 : Manejo de archivos ANSI
+A : Modularidad
+B : Estructuras de datos
