@@ -1,13 +1,15 @@
 
 0 : Introducción, compilación y miselaneos.
-1 : Tipos de datos, conversión entre tipos y alias.
-2 : Operaciones básicas y funciones matemáticas
-3 : Lectura y escritura
-4 : Estructuras de control
-5 : Funciones
-6 : Cadenas, secuencias de escape y conjuntos de caracteres
+1 : Tipos de datos y alias
+2 : Conversión entre tipos
+3 : Operaciones básicas y funciones matemáticas
+4 : Lectura y escritura
+5 : Estructuras de control
+6 : Funciones
 7 : Apuntadores
-8 : Memoria dinámica
-9 : Manejo de archivos ANSI
-A : Modularidad
-B : Estructuras de datos
+8 : Arreglos
+9 : Cadenas, secuencias de escape y conjuntos de caracteres
+A : Memoria dinámica
+B : Manejo de archivos ANSI
+C : Modularidad
+D : Estructuras de datos

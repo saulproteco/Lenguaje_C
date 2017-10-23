@@ -15,10 +15,18 @@
 
 int main(void)
 {
-    /* Las variables en C se clasifican en tres tipos: enteras, números *
-     * de punto flotante y compuestas. Las variables enteras y de punto *
-     * flotante a su vez forman el conjunto de las variables escalares, *
-     * es decir, las variables formadas por un valor concreto mientras  *
+    /* Los tipos básicos se clasifican en las siguientes categorias:    *
+     * enteros, números de punto flotante y compuestos (En realidad el  *
+     * estandar establece que los compuestos son también numeros de     *
+     * punto flotante, pero algunas implementaciones aceptan además     *
+     * numeros compuestos de otros tipos).                              *
+     *
+     * Las variables enteras y de punto flotante a su vez forman el     *
+     * conjunto de las variables escalares mientras que el resto (con   *
+     * la exepción de los tipos enumerados) son los tipos compuestos.   *
+     * Los enteros, flotantes, complejos y los tipos enumerados forman  *
+     * el conjunto de los tipos escalares [1].
+     * se forman el grupo de las variables aritméticas.
      * que el resto de variables son llamadas compuestas y se componen  *
      * de una combinación de las anteriores.                            *
      *                                                                  *
@@ -225,3 +233,7 @@ int main(void)
 
     return EXIT_SUCCESS;
 }
+
+/** Referencias:
+ *      1. Peter Prinz Y Tony Crawford. (2016). C in a Nutshell. Gravenstein Highway North, Sebaspool CA 95472: O'Really. pp.24
+ */
