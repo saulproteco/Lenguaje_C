@@ -95,6 +95,7 @@ int main(void)
      * A continuación algunos identificadores que incluyen simbolos  *
      * universales.                                                  */
 
+#if defined(__STDC_UTF_16__) || defined(__STDC_UTF_32__)
     int a\u00F1o = 1996;    // \u00F1 = ñ, año = 1996
     IMPRIME_VAR(a\u00F1o);
 
@@ -105,6 +106,9 @@ int main(void)
     // \u304B\u308F\u3044\u3044 = かわいい = kawaii :D
     int \u304B\u308F\u3044\u3044 = ':' + 'D';
     IMPRIME_VAR(\u304B\u308F\u3044\u3044);
+#else
+#warning Es posible que su compilador sea viejo para soportar caracteres universales
+#endif
 
     /* Las secuencias de caracter universal con valor menor o igual a   *
      * 0000FFFF cuentan como 6 caracteres sin importar la longitud que  *

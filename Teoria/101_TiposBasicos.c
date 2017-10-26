@@ -190,10 +190,12 @@ int main(void)
      * tratara. Se puede acceder a sus partes por separado usando       *
      * aritmética de apuntadores u ocupar las macros definidas en la    *
      * cabecera complex.h.                                              *
-     *
+     *                                                                  *
      * Las operaciones básicas de los complejos son manejadas por el    *
      * compilador pero no las operaciones de entrada y salida lo que    *
      * puede dificultar un poco su uso.                                 */
+
+#ifndef __STDC_NO_COMPLEX__ // Si el compilador no soporta complejos
 
     _Complex signed char          complejo0 = +1   - 9999i;
     _Complex signed short int     complejo1 = -2   +  666i;
@@ -230,6 +232,8 @@ int main(void)
     printf("Tamaño de _Complex double:      %zu\n", sizeof(complejo11));
     printf("Tamaño de _Complex long double: %zu\n", sizeof(complejo12));
     getchar();
+
+#endif // __STDC_NO_COMPLEX__
 
     return EXIT_SUCCESS;
 }

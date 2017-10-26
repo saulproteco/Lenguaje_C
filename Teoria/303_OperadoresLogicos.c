@@ -14,13 +14,15 @@
 #include <stdlib.h>     // EXIT_SUCCESS
 #include <stdbool.h>    // bool, false, true
 
-static const char * verdarero_falso (bool condicion)
+static const char *
+verdarero_falso (bool condicion)
 {
     if (condicion == true)  return "true";
     if (condicion == false) return "false";
 }
 
-int main (void)
+int
+main (void)
 {
     /* Los operadores lógicos sirven para entrelazar valores *
      * de verdad (los cuales pueden ser obtenidos mediante   *

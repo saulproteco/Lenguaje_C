@@ -9,6 +9,8 @@
  * Estilo de código: Linux modificado (4 espacios por tab).
  */
 
+#define IGNORAR_ADVERTENCIA_DE_VARIABLE_SIN_USAR(x) (void) x
+
 #include <stdio.h>      // printf
 #include <stdlib.h>     // EXIT_SUCCESS
 #include <stdbool.h>    // false, true, bool
@@ -48,7 +50,7 @@ int main(void)
 
     union tipoUnion un1 = { 12 };         // Se inicializa el entero
     union tipoUnion un2 = { .b = 15.5 };  // Se inicializa el flotante
-    union tipoUnion un3 = { .a = 10, .b = 102.0 }; // No tiene sentido inicializar dos de los campos, solo conserva uno y el otro se sobrreescribe
+    union tipoUnion un3 = { .a = 10, .b = 102.0 }; // No tiene sentido inicializar dos de los campos, solo conserva uno y el otro se sobreescribe
 
     puts("\nUniones:");
     printf("Union 1: %d %f\n", un1.a, un1.b);
@@ -95,5 +97,9 @@ int main(void)
     else
         printf("%f\n", an2.b);
 
+    IGNORAR_ADVERTENCIA_DE_VARIABLE_SIN_USAR(anonima1);
+    IGNORAR_ADVERTENCIA_DE_VARIABLE_SIN_USAR(anonima2);
+    IGNORAR_ADVERTENCIA_DE_VARIABLE_SIN_USAR(sin_nombre1);
+    IGNORAR_ADVERTENCIA_DE_VARIABLE_SIN_USAR(sin_nombre2);
     return EXIT_SUCCESS;
 }

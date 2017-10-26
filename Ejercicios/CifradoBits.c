@@ -16,6 +16,9 @@ static char * nombre_archivo = NULL;
 static char * clave_cifrado = NULL;
 
 int main(int argc, char * restrict argv[]) {
+    extern char * nombre_archivo;   // Nombre archivo y clave cifrado
+    extern char * clave_cifrado;    // se refieren a las variable
+                                    // globales
 
     if ( argc == 3 ) {
         nombre_archivo = argv[1];
@@ -36,6 +39,8 @@ int main(int argc, char * restrict argv[]) {
 }
 
 int codificar(const char * nombre_archivo, const char * clave_cifrado) {
+    // nombre_archivo y clave_cifrado se refieren a los parámetros
+    // de la función.
     FILE * ap_archivo = fopen(nombre_archivo, "r+");
     int caracter;
 
@@ -72,7 +77,14 @@ char * pedir_cadena(const char * const mensaje) {
     return nueva_cadena;
 }
 
-void liberar_memoria(void) {
+void liberar_memoria(void)
+{
+    extern char * nombre_archivo;
+    extern char * clave_cifrado;
+
     free(nombre_archivo);
     free(clave_cifrado);
+
+    nombre_archivo = NULL;
+    clave_cifrado  = NULL
 }

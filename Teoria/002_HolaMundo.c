@@ -27,14 +27,36 @@
 //          - Un entero que indica el estado de finalización del programa.
 //            (por convención, 0 significa éxito y cualquier otro número
 //            significa fallo).
+//
+// El estandar de C también acepta otra forma para el main la cual no
+// recibe argumentos. Sin embargo, hay diversas formas alternativas del
+// main que no van acordes con el estandar y que dependen del compilador
+// o de la plataforma, por ejemplo, el compilador de GNU puede recibir un
+// argumento extra que es un apuntador a las variables de entorno del
+// sistema, generalmente llamado "envp".
+
+#define IGNORAR_ADVERTENCIA_DE_VARIABLE_SIN_USAR(x) (void) x
 
 int // Tipo de retorno entero por defecto, se puede omitir
-main (int contador_argumentos, char * vector_argumentos[])
+main (
+        int contador_argumentos,
+        char * vector_argumentos[]
+#ifdef __GNUC__     // El tercer argumento solo es válido en gcc
+        , char * apuntador_variables_entorno[]
+#endif
+     )
 {
-    puts("¡Hola mundo!"); // Imprime el mensaje.
 
-    getchar(); // Espera a que se presione enter antes de salír.
+    IGNORAR_ADVERTENCIA_DE_VARIABLE_SIN_USAR(contador_argumentos);
+    IGNORAR_ADVERTENCIA_DE_VARIABLE_SIN_USAR(vector_argumentos);
+
+#ifdef __GNUC__
+    IGNORAR_ADVERTENCIA_DE_VARIABLE_SIN_USAR(apuntador_variables_entorno);
+#endif
+
+    puts ("¡Hola mundo!"); // Imprime el mensaje.
+
+    getchar (); // Espera a que se presione enter antes de salír.
 
     return EXIT_SUCCESS;    // Regresa 0, es decir éxito
 }
-

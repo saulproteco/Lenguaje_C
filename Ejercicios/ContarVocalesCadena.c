@@ -21,6 +21,12 @@ const char representacion[NUMERO_VOCALES] = {
 
 int main(void)
 {
+    extern const char representacion[]; // La variable global "representación"
+                                        // Esta declaración podria omitirse
+                                        // ya que dicha variable se
+                                        // encuentra en la misma unidad
+                                        // de traducción.
+
     int conteo[NUMERO_VOCALES] = { 0 };
 
     char cadena_entrada[LARGO_LINEA];

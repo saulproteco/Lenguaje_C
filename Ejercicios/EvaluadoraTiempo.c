@@ -8,12 +8,12 @@
 #include <math.h>       // pow, fabs
 #include <time.h>       // clock
 
-#define TAM_ARREGLO(_x) (sizeof(_x) / sizeof(_x[0]))
+#define TAM_ARREGLO(_x) (int)(sizeof(_x) / sizeof(_x[0]))
 
 #define COLUMNAS_MATRIZ 30
 #define FILAS_MATRIZ    20
 
-clock_t evaluarTiempo(void (*funcion)(void), int repeticiones);
+int evaluarTiempo(void (*funcion)(void), int repeticiones);
 
 void funcion1(void);
 void funcion2(void);
@@ -21,7 +21,7 @@ void funcion3(void);
 void funcion4(void);
 void funcion5(void);
 
-void (*arregloFunciones[]) = {
+static void (*arregloFunciones[]) = {
     funcion1,
     funcion2,
     funcion3,
@@ -31,24 +31,24 @@ void (*arregloFunciones[]) = {
 
 int main(int argc, char * restrict argv[]) {
     int repeticiones = 1000;
-    clock_t tiempo[TAM_ARREGLO(arregloFunciones)];
+    int tiempo[TAM_ARREGLO(arregloFunciones)];
 
     if ( argc == 2 ) {
         if ( !sscanf(argv[1], "%d", &repeticiones) )
             fprintf(stderr, "El argumento es inválido\n"), exit(EXIT_FAILURE);
     }
 
-    for (size_t i = 0; i < TAM_ARREGLO(arregloFunciones); i++)
+    for (int i = 0; i < TAM_ARREGLO(arregloFunciones); i++)
         tiempo[i] = evaluarTiempo(arregloFunciones[i], repeticiones);
 
-    for (size_t i = 0; i < TAM_ARREGLO(arregloFunciones); i++)
+    for (int i = 0; i < TAM_ARREGLO(arregloFunciones); i++)
         printf("El tiempo de ejecución de la función %d "
-               "es: %ld\n", i + 1, tiempo[i]);
+               "es: %d\n", i + 1, tiempo[i]);
 
     return EXIT_SUCCESS;
 }
 
-clock_t evaluarTiempo(void (*funcion)(void), int repeticiones) {
+int evaluarTiempo(void (*funcion)(void), int repeticiones) {
     clock_t inicio, fin;
 
     puts("Ejecutando la función:");

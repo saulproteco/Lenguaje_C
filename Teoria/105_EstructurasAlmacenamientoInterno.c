@@ -9,9 +9,9 @@
  * Estilo de código: GNU.
  */
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <stdbool.h>
+#include <stdio.h>      // printf
+#include <stdlib.h>     // EXIT_SUCCESS
+#include <stdbool.h>    // bool, false, true
 
 #define BINARIO(estr) estructuraEnBinario(&estr, sizeof(estr))
 
@@ -285,7 +285,7 @@ main (int argc, const char * argv[])
     printf ("Tamanio de 'camposAcomodados': %zu\n",
             sizeof(struct camposAcomodados));
 
-    /* Por Ultimo, una aclaraciOn quizas obvia pero importante: hay que *
+    /* Por último, una aclaraciOn quizas obvia pero importante: hay que *
      * estar al pendiente de que los valores de los campos de bits no   *
      * se desborden (como en cualquier otra variable valla), pues el    *
      * hecho de estar limitados en espacio hace mAs comUn el            *
