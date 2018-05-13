@@ -1,6 +1,6 @@
 /*==========================================================*
  * Lista de las palabras reservadas en lenguaje C ordenadas *
- * por categorias.                                          *
+ * por categorías.                                          *
  *==========================================================*/
 
 /**

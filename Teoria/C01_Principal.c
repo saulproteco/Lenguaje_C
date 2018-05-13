@@ -32,23 +32,23 @@
  * etc, etc.                                            *
  *======================================================*/
 
-/* Las cabeceras se incluyen en todo lugar que requera las definiciones */
+/* Las cabeceras se incluyen en todo lugar que requiera las definiciones */
 #include <stdio.h>
 #include "C01_Cabecera.h" // Incluye prototipos y variables externas
 
 /*
  * Las variables globales sin modificador pueden potencialmente
- * ser vistas desde otros archivos si estos hacen una definiciOn extern
+ * ser vistas desde otros archivos si estos hacen una definición extern
  */
 int variable_global;
 
 /* Las variables globales con el modificador static solo pueden ser
- * vistos en la unidad de traducciOn en que son declaradas. La unidad
- * de traducciOn es generalmente sinonimo del archivo excepto cuando
+ * vistos en la unidad de traducción en que son declaradas. La unidad
+ * de traducción es generalmente sinónimo del archivo excepto cuando
  * se usa la directiva #include para copiar el contenido de un
- * archivo en otro. Sin embargo, poner cOdigo o variables en archivos
- * de cabecera es mala prActica y por ello volvemos a la situaciOn
- * en que es los conceptos de "unidad de traducciOn" y "archivo" son
+ * archivo en otro. Sin embargo, poner código o variables en archivos
+ * de cabecera es mala práctica y por ello volvemos a la situación
+ * en que es los conceptos de "unidad de traducción" y "archivo" son
  * equivalentes.
  */
 
@@ -64,7 +64,7 @@ int regresa_valor(void) {
     // son estáticas.
 
     // La siguiente declaración hace que i sea una variable persistente
-    // a travéz de las diversas llamadas a la función y hace que la
+    // a través de las diversas llamadas a la función y hace que la
     // inicialización a 0 se ejecute solo una vez cuando dicha variable
     // es creada.
     static int i = 0;

@@ -3,7 +3,7 @@
  *====================*/
 
 /**
- * Autor: Martínez Ortíz Saúl Axel
+ * Autor: Martínez Ortiz Saúl Axel
  * Dificultad: Intermedio.
  * Requisitos: Funciones, apuntadores a funciones..
  * Estilo de código: Linux modificado (4 espacios por tab).
@@ -42,10 +42,10 @@ int main(void)
     // y escribir el cuerpo de la función en un bloque interno.
     int funcion_anidada1(int (*funcion_parametro)(void))
     {
-        puts("Esta es una funciOn que recibe como argumento"
-             "a otra funciOn con retorno entero y sin parAmetros\n");
+        puts("Esta es una función que recibe como argumento"
+             "a otra función con retorno entero y sin parAmetros\n");
 
-        printf("La direcciOn de otra_fun es: %p\n\n", funcion_parametro);
+        printf("La dirección de otra_fun es: %p\n\n", funcion_parametro);
 
         return funcion_parametro();
     }
@@ -59,7 +59,7 @@ int main(void)
             printf(" %2d", arreglo[i]);
         puts("\n");
 
-        puts("Llamando a la funciOn");
+        puts("Llamando a la función");
         funcion();
 
         return rand();
@@ -86,7 +86,7 @@ int main(void)
 
     int resultado2 = funcion_anidada2(
         'A',                                // Letra
-        6,                                  // Tamanio del arreglo
+        6,                                  // Tamaño del arreglo
         (int []) { 5, 3, 1, -1, -3, -5 },   // Elementos del arreglo
         ({ void casi_anonima(void) { printf("Holii\n"); } casi_anonima; })   // Otra función declarada sobre la marcha
     );
@@ -103,7 +103,7 @@ int main(void)
 
 void funcion_normal(void)
 {
-    printf("Si se descomenta la siguiente línea habrá un error de compilación");
+    printf("Si se des-comenta la siguiente línea habrá un error de compilación");
     //funcion_anidada2(); // Esta llamada daría un error de compilación.
                            // 'funcion_anidada2' solo existe en el bloque o
                            // función en que se declaró (main en este caso).

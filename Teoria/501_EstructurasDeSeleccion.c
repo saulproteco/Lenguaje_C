@@ -4,10 +4,10 @@
  *==========================*/
 
 /**
- * Autor: Martínez Ortíz Saúl Axel
+ * Autor: Martínez Ortiz Saúl Axel
  * Dificultad: Básico.
  * Requisitos: Bases de lenguaje C.
- * Estilo de código: Miscelaneo.
+ * Estilo de código: Misceláneo.
  */
 
 #include <stdio.h>  // printf
@@ -17,7 +17,7 @@ int main(void) {
     int a = 3;
 
     printf("El valor de a es %d\n", a);
-    // Condicional if: Estructura que evaláa una condición y en caso
+    // Condicional if: Estructura que evalúa una condición y en caso
     // de cumplirse ejecuta una instrucción o conjunto de ellas.
     // Opcionalmente se pueden especificar que hacer en caso de no
     // cumplirse la condición con la palabra reservada else.
@@ -31,7 +31,7 @@ int main(void) {
 
     // if-else-if: Estructura que puede evaluar múltiples condiciones
     // secuencialmente. La ejecución de los códigos especificados en
-    // las codiciones es mutuamente excluyente.
+    // las condiciones es mutuamente excluyente.
 
     printf("¿a es algún número entre 1 y 5?\n");
 

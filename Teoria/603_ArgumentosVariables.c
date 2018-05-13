@@ -7,7 +7,7 @@
 #include <string.h>     // strlen
 
 /**
- * Autor: Martínez Ortíz Saúl Axel
+ * Autor: Martínez Ortiz Saúl Axel
  * Dificultad: Avanzado.
  * Requisitos: Funciones, estructuras, arreglos, apuntadores y operaciones
  *             de bits..
@@ -113,15 +113,15 @@ int main(void)
 /** Argumentos variables por medio de elipsis
  *
  *  Ventajas:
- *      -   Relativamente facil de usar los argumentos, hay
+ *      -   Relativamente fácil de usar los argumentos, hay
  *          que usar apuntadores o las macros de stdarg.h
- *      -   Relativamente facil de llamar en el programa.
+ *      -   Relativamente fácil de llamar en el programa.
  *
  *  Desventajas:
- *      -   No se puede usar comprobaciOn de tipos.
- *      -   Puede resultar dificil usar argumentos de distintos tipos
+ *      -   No se puede usar comprobación de tipos.
+ *      -   Puede resultar difícil usar argumentos de distintos tipos
  *          pues se requiere decidir como hacer uso del Ultimo argumento
- *          fijo para identificar los tipos de la lista recivida.
+ *          fijo para identificar los tipos de la lista recibida.
  */
 
 int ArgumentosVariablesElipsis(int conta, ...)
@@ -165,15 +165,15 @@ double ArgumentosVariablesArreglos(double * arreglo, int conta)
 /** Argumentos por defecto usando estructuras
  *
  *  Ventajas:
- *      -   Se pueden combinar varios tipos de dAtos.
- *      -   Se puede usar la notacion de estructuras mandar
+ *      -   Se pueden combinar varios tipos de datos.
+ *      -   Se puede usar la notación de estructuras mandar
  *          argumentos en desorden.
  *
  *  Desventajas:
  *      -   Nuevamente se requiere de macros complicadas para hacer
- *          las llamadas mAs agradables a la vista.
+ *          las llamadas más agradables a la vista.
  *      -   Puede confundir a los muchos desconocedores de la sintaxis
- *          de inicializaciOn de estructuras en desorden.
+ *          de inicialización de estructuras en desorden.
  */
 
 void ArgumentosVariablesEstructuras(ArgumentoEstructura arg)
@@ -190,23 +190,23 @@ void ArgumentosVariablesEstructuras(ArgumentoEstructura arg)
  *      -   Ocupa muy poco espacio para representar una gran cantidad
  *          de argumentos.
  *      -   Es sencillo hacer un conjunto de constantes asociadas a
- *          los significados de cada bit (en comparaciOn con las
- *          macros de los otros mEtodos).
+ *          los significados de cada bit (en comparación con las
+ *          macros de los otros métodos).
  *
  *  Desventajas:
  *      -   Los argumentos solo pueden ser verdadero o falso.
- *      -   La lOgica binario es poco conocida entre programadores
+ *      -   La lógica binario es poco conocida entre programadores
  *          novatos, por lo que la gente puede confundirse con tu
- *          cOdigo.
- *      -   Como el tamanio de los enteros cambia segUn la arquitectura,
- *          puede que un tipo sea suficiente para todos los arguemntos en
+ *          código.
+ *      -   Como el tamaño de los enteros cambia según la arquitectura,
+ *          puede que un tipo sea suficiente para todos los arguementos en
  *          una computadora y no sea suficiente en otra.
- *          Para solventar esto hay que usar enteros de tamanio fijo
+ *          Para solventar esto hay que usar enteros de tamaño fijo
  *          proporcionados por la cabecera stdint.h
  */
 
 // int16_t es un entero de 16 bits definido en stdint.h, la cual
-// garantiza que en todas las arquitecturas que sigan el estandar
+// garantiza que en todas las arquitecturas que sigan el estándar
 // c99 dicho entero mida lo mismo.
 void ArgumentosVariablesBits(const char * const mensaje, int16_t secuenciaBits)
 {
@@ -236,7 +236,7 @@ void ArgumentosVariablesBits(const char * const mensaje, int16_t secuenciaBits)
     else
     if ( banderas & SPROR ) putchar(' ');
 
-    // Salto de lInea si hay algo en la parte de arriba
+    // Salto de línea si hay algo en la parte de arriba
     if ( banderas & SPROR ) putchar('\n');
 
     // Lado izquierdo

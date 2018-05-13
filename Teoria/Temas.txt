@@ -1,5 +1,5 @@
 
-0 : Introducción, compilación y miselaneos.
+0 : Introducción, compilación y misceláneos.
 1 : Tipos de datos y alias
 2 : Conversión entre tipos
 3 : Operaciones básicas y funciones matemáticas

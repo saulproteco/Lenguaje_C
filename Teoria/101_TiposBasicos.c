@@ -129,8 +129,8 @@ int main(void)
      * complejos no tienen una longitud bien determinada ya que como    *
      * cualquier cosa en C, dependen del compilador. Lo que si tienen   *
      * es un requisito mínimo de que el tipo float y el double deben    *
-     * tener una presición equivalente o superior a un número de punto  *
-     * flotante IEEE 754 de presición media y que el float no puede ser *
+     * tener una precisión equivalente o superior a un número de punto  *
+     * flotante IEEE 754 de precisión media y que el float no puede ser *
      * mayor que el double.                                             *
      *                                                                  *
      * Generalmente, los flotantes no dan vuelta a sus valores como lo  *
@@ -163,16 +163,26 @@ int main(void)
     long double flotante3 = 3.141592653589793L; // Sufijo L al igual que en los enteros
                                                 // long, la diferencia es que esta
                                                 // literal tiene decimales.
-    puts("Los tamaños de los flotantes deberían ser 4, 8 y 16 bits:\n");
+    puts("Los tamaños de los flotantes:\n");
     printf("El tamaño del float es:       %zu\n", sizeof(flotante1));
     printf("El tamaño del double es:      %zu\n", sizeof(flotante2));
     printf("El tamaño del long double es: %zu\n", sizeof(flotante3));
+
+#ifdef __STDC_IEC_559__
+    puts("Este compilador usa el estándar IEEE 754 para la aritmética flotante\n"
+         "Eso significa que el tipo \"float\" se corresponde con un número    \n"
+         "flotante de precisión simple, el \"double\" se corresponde con un   \n"
+         "número de doble precisión de los especificados por el mencionado    \n"
+         "estándar");
+#else
+    puts("Este compilador no sigue el estándar IEEE 754 de aritmética flotante");
+#endif
     getchar();
 
     /* Otras formas de declarar flotantes.                             *
-     * [+-]?<numero>e[+-]?<exponente>     -> El primer numero por 10   *
+     * [+-]?<número>e[+-]?<exponente>     -> El primer numero por 10   *
      *                                     al exponente                *
-     * [+-]?<numero>E[+-]?<exponente>     -> Lo mismo que el anterior  *
+     * [+-]?<número>E[+-]?<exponente>     -> Lo mismo que el anterior  *
      *                                                                 *
      * Nota: Los corchetes indican opciones (signo positivo o negativo)*
      * mientras que el signo de interrogación nos informa que dicho    *
@@ -229,7 +239,7 @@ int main(void)
     _Complex unsigned int           complejo7 = 3u   + 10ui;
     _Complex unsigned long int      complejo8 = 4uL  + 9uLi;
     _Complex unsigned long long int complejo9 = 5uLL + 8uLLi;
-#endif
+#endif // __GNUC__
 
     puts("Los tamaños de los complejos deben ser el "
          "doble del tipo de dato que almacenan\n");
@@ -249,7 +259,7 @@ int main(void)
     printf("Tamaño de _Complex unsigned:           %zu\n", sizeof(complejo7));
     printf("Tamaño de _Complex unsigned long:      %zu\n", sizeof(complejo8));
     printf("Tamaño de _Complex unsigned long long: %zu\n", sizeof(complejo9));
-#endif
+#endif // __GNUC__
     putchar('\n');
     getchar();
 

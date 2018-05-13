@@ -2,14 +2,14 @@
  * Operadores de bit a bit                        *
  *                                                *
  * Descripción:                                   *
- *  VisualizaciOn de las operaciones de bit a bit *
- *  por medio de la representaciOn binaria de los *
+ *  Visualización de las operaciones de bit a bit *
+ *  por medio de la representación binaria de los *
  *  caracteres                                    *
  *================================================*/
 
 /**
- * Autor: Martínez Ortíz Saúl Axel
- * Dificultad: Basico.
+ * Autor: Martínez Ortiz Saúl Axel
+ * Dificultad: Básico.
  * Requisitos: Funciones, estructuras de control.
  * Estilo de código: Google.
  */
@@ -34,17 +34,17 @@ int main(void) {
     printf("\nb = %d = ", b);
     imprimeByte(b);
 
-    /* Los operadores bit a bit funcionan escencialmente como los *
+    /* Los operadores bit a bit funcionan esencialmente como los  *
      * operadores lógicos excepto porque los primeros operan      *
-     * sobre cada elemento del entero y los operadores lOgicos    *
+     * sobre cada elemento del entero y los operadores lógicos    *
      * operan "globalmente" regresando solo un valor de verdad.   *
      *                                                            *
-     * Otra diferencia es que los operadores lOgicos pueden       *
+     * Otra diferencia es que los operadores lógicos pueden       *
      * asumir resultados tales como "en una secuencia de valores  *
      * de verdad separados por el operador || me basta con        *
      * encontrar un valor que sea verdad para asumir que toda la  *
-     * sentencia serA verdad", asumpciOn que se conoce como       *
-     * calculos de corto circuito. Como la finalidad de los       *
+     * sentencia será verdad", asunción que se conoce como       *
+     * cálculos de corto circuito. Como la finalidad de los       *
      * operadores de bits es obtener un resultado completo y no   *
      * solo el valor de verdad no se pueden parar en medio de una *
      * sentencia para optimizar el calculo.                       */
@@ -71,12 +71,12 @@ int main(void) {
      * que pareciera prevalecer a pesar del lo que valga el otro   *
      * operando. Por ejemplo, en el caso del AND si uno de los bits*
      * es 0 no importa el valor del otro pues igualmente el        *
-     * resultado serA 0 y en caso del OR si uno de los bits es 1   *
-     * el resultado en definitiva serA 1. En ambos casos el        *
+     * resultado será 0 y en caso del OR si uno de los bits es 1   *
+     * el resultado en definitiva será 1. En ambos casos el        *
      * elemento contrario al envolvente es el elemento neutro cuyo *
      * valor hace que se conserve el resultado anterior.           *
      * En cuanto a los dos operadores restantes hay que enfatizar  *
-     * que el repetir una operaciOn revierte las acciones de la    *
+     * que el repetir una operación revierte las acciones de la    *
      * primera de manera que se obtiene el valor original.         */
     puts("\n");
 

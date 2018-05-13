@@ -3,7 +3,7 @@
  *================*/
 
 /**
- * Autor: Martínez Ortíz Saúl Axel
+ * Autor: Martínez Ortiz Saúl Axel
  * Dificultad: Intermedio-Avanzado.
  * Requisitos: Arreglos, estructuras de control.
  * Estilo de código: Linux modificado (4 espacios por tab).
@@ -475,7 +475,7 @@ int main(void)
      *             palabra si decide que no es conveniente.             *
      *             Otro detalle sobre las funciones declaradas inline   *
      *             es que son las únicas cuyo prototipo no tiene        *
-     *             visivilidad 'extern' por defecto y tenemos que       *
+     *             visibilidad 'extern' por defecto y tenemos que       *
      *             especificarla nosotros mismos.                       *
      *                                                                  *
      *  - _Noreturn : Indica al compilador que una función nunca acaba  *

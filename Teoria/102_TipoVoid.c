@@ -55,7 +55,7 @@ main (void)
     //  Si declaramos:
     //      int funcion();
     //
-    //  Podriamos llamar dicha función como:
+    //  Podríamos llamar dicha función como:
     //      funcion(10)
     //
     //          ó

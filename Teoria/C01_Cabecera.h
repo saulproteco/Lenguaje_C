@@ -6,15 +6,15 @@
 #ifndef CABECERA_H
 #define CABECERA_H
 
-extern int var;     // La declaraciOn extern hace que la variable
+extern int var;     // La declaración extern hace que la variable
                     // var sea visible y modificable por todos los
                     // archivos que incluyan la cabecera.
 
-void imprimir_variable_externa(void); // Los prototipos de funciOn son
+void imprimir_variable_externa(void); // Los prototipos de función son
                                       // extern por defecto excepto por un
-                                      // tipo de funciOn.
+                                      // tipo de función.
 
 // Los prototipos de las funciones inline no son extern por defecto
-// por lo que se tiene que indicar explicitamente.
+// por lo que se tiene que indicar explícitamente.
 extern void funcion_inline(void);
 #endif /* CABECERA_H */

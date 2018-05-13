@@ -90,7 +90,7 @@ int main(void)
 
     do {
         printf("No importa que la condición sea falsa desde el principio\n"
-               "porque esto se va a ejecuar igualmente");
+               "porque esto se va a ejecutar igualmente");
     } while (0);
 
     return EXIT_SUCCESS;

@@ -3,7 +3,7 @@
  * ======== */
 
 /**
- * Autor: Martínez Ortíz Saúl Axel
+ * Autor: Martínez Ortiz Saúl Axel
  * Dificultad: Básico.
  * Requisitos: Funciones, macros, ciclos.
  * Estilo de código: Microsoft.
@@ -16,7 +16,7 @@
 // de uno de sus elementos
 #define TAMANIO_ARREGLO(arreglo)    ( sizeof(arreglo) / sizeof(arreglo[0]) )
 
-// Ciclo que recorre automaticamente el arreglo pero sin definir operaciones
+// Ciclo que recorre automáticamente el arreglo pero sin definir operaciones
 #define RECORRIDO_ARREGLO(arreglo)                                          \
         for (int i = 0; i < TAMANIO_ARREGLO(arreglo); i++)
 
@@ -27,8 +27,8 @@ void ImprimeMatriz(int matriz[3][3]);
 
 int main(void)
 {
-    // Indicamos tamanio e inicializamos los elementos
-    // El resultado es un arreglo de tamanio 5 con justo 5 elementos inicializado manualmente
+    // Indicamos tamaño e inicializamos los elementos
+    // El resultado es un arreglo de tamaño 5 con justo 5 elementos inicializado manualmente
     int arreglo1[5] = { 1, 2, 3, 4, 5 };
 
     RECORRIDO_ARREGLO(arreglo1)
@@ -36,10 +36,10 @@ int main(void)
 
     puts("\n\n");
 
-    // No indicamos el tamaño, el compilador cuenta los elementos y asigna el tamanio justo
-    // El resultado es un arreglo con justo 8 letras sin un caracter de terminaciOn de cadena
+    // No indicamos el tamaño, el compilador cuenta los elementos y asigna el tamaño justo
+    // El resultado es un arreglo con justo 8 letras sin un carácter de terminación de cadena
     char arreglo2[] = { 'Q', 'u', 'e', ' ', 'b', 'i', 'e', 'n', '!' };
-    printf("Tamanio del arreglo de caracteres: %zu\n", TAMANIO_ARREGLO(arreglo2));
+    printf("Tamaño del arreglo de caracteres: %zu\n", TAMANIO_ARREGLO(arreglo2));
 
     printf("El arreglo de caracteres impreso mediante un ciclo: ");
     RECORRIDO_ARREGLO(arreglo2) putchar(arreglo2[i]);
@@ -71,16 +71,16 @@ int main(void)
         printf("%8.2f %8.2f * i\n", arreglo5[i]);
     }
 
-    // C99: Arreglos anonimos: Se pueden crear arreglos sobre la marcha y pasarlos a una
+    // C99: Arreglos anónimos: Se pueden crear arreglos sobre la marcha y pasarlos a una
     // expresión/función que reciba alguno de los mismo. Más allá de la línea en que son
     // usados no se les podrá volver a referenciar.
     RecibeArreglo( (short[]) { 0b10, 0b100, 0b1000, 0b10000 } );
 
     // C99: Arreglos de longitud variable. Son arreglos cuyo espacio no es reservado en tiempo
-    // de compilaciOn sino en tiempo de ejecuciOn. Se caracterizan por recibir una variable
-    // dentro de los corchetes del tamanio.
+    // de compilación sino en tiempo de ejecución. Se caracterizan por recibir una variable
+    // dentro de los corchetes del tamaño.
 
-    printf("Ingrese el tamanio del arreglo: ");
+    printf("Ingrese el tamaño del arreglo: ");
     int tam;
 
     if ( !scanf("%d", &tam) )
@@ -88,7 +88,7 @@ int main(void)
 
     long arregloLongitudVariable[tam];
 
-    puts("El arreglo reservado dinamicamente es:");
+    puts("El arreglo reservado dinámicamente es:");
     RECORRIDO_ARREGLO(arregloLongitudVariable)
         printf("%ld", arregloLongitudVariable[i]);
 
@@ -139,16 +139,16 @@ int main(void)
 }
 
 /* Nota: El compilador ignora el 4 dentro de los corchetes
-por lo que tecnicamente la funciOn puede recibir arreglos de diferente
+por lo que técnicamente la función puede recibir arreglos de diferente
 longitud.
 */
 void RecibeArreglo(short arreglo[4])
 {
-    printf("He recibido un arreglo, su direcciOn es: %p\n", arreglo);
+    printf("He recibido un arreglo, su dirección es: %p\n", arreglo);
 
     puts("Los elementos del arreglo son:");
 
-    // No hay garantia de que el arreglo recibido tenga exactamente 4
+    // No hay garantía de que el arreglo recibido tenga exactamente 4
     printf("%2hd %2hd %2hd %2hd\n", arreglo[0], arreglo[1], arreglo[2], arreglo[3]);
 
 }

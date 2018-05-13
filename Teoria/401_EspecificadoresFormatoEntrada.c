@@ -14,7 +14,7 @@
 
 /* En la labor de darle cierta apariencia u orden a nuestros resultados *
  * nos encontramos con los especificadores de conversión o de formato,  *
- * los cuales nos proveen de una sintaxis consisa para hacer            *
+ * los cuales nos proveen de una sintaxis concisa para hacer            *
  * manipulaciones a la representación textual de los tipos básicos.     *
  *                                                                      *
  * Los especificadores de formato aparecen enmedio de una cadena de     *
@@ -22,7 +22,7 @@
  *      %[modificador]*[ancho|\*]?(\.[precisión|\*])?[indicador_tipo]   *
  *                                                                      *
  *     --no confundir el asterisco suelto que representa "una o mas     *
- *     veces" con el alterisco escapado que representa el carácter      *
+ *     veces" con el asterisco escapado que representa el carácter      *
  *     literal--                                                        *
  *                                                                      *
  * De donde:                                                            *
@@ -72,8 +72,8 @@
  *                                                                      *
  * - (\.[precisión]) => Un punto seguido de otro entero se interpreta   *
  *          como la precisión de la representación. Dicha precisión     *
- *          tiene un significado distindo dependiendo del tipo de dato  *
- *          en que se esté usando. El uso más común de este dáto es     *
+ *          tiene un significado distinto dependiendo del tipo de dato  *
+ *          en que se esté usando. El uso más común de este dato es     *
  *          indicar el número de decimales que queremos imprimir de un  *
  *          valor de punto flotante.                                    *
  *          El único modificador que afecta el significado de la        *
@@ -128,13 +128,13 @@
 int main(void)
 {
     /* Los especificadores de formato para la salida se pueden usar con *
-     * una varieda de funciones, todas con una 'f' de "formato" en el   *
+     * una variedad de funciones, todas con una 'f' de "formato" en el  *
      * nombre, cada una recibiendo la cadena de formato enmedio de la   *
      * cual habrá incrustados los especificadores a modo de 'aparta     *
      * lugares' (del inglés "placeholder") los cuales serán expandidos  *
      * con los argumentos extra de la función.                          *
      * Cada una de las funciones trabaja sobre una salida distinta:     *
-     *  - printf -> Manda el resultado a la salida estandar.            *
+     *  - printf -> Manda el resultado a la salida estándar.            *
      *  - fprintf -> Manda el resultado a un archivo.                   *
      *  - sprintf -> Manda el resultado a un arreglo de caracteres.     *
      *                                                                  *
@@ -150,7 +150,7 @@ int main(void)
     // representar inicio y final de la impresión con formato
     // respectivamente. Esto se hace para poder visualizar el relleno.
 
-    // Impresión de carácteres:
+    // Impresión de caracteres:
     //  El único modificador válido es el signo de menos (para cambiar la
     //  dirección en que se justifica). El ancho funciona normalmente y
     //  la precisión no tiene significado:
@@ -171,7 +171,7 @@ int main(void)
     getchar(); getchar();
 
     // Impresión de cadenas:
-    //  El único modificador válido siguie siendo '-'.
+    //  El único modificador válido sigue siendo '-'.
     //  El significado del ancho es tomado como longitud mínima.
     //  La precisión en cambio, significa que una palabra debe
     //  cortarse hasta tener como máximo, el valor especificado.
@@ -194,7 +194,7 @@ int main(void)
     // Impresión de enteros decimales signados:
     //  Todos los modificadores son válidos a excepción del numeral (#).
     //  El ancho funciona normalmente y la precisión tiene el mismo
-    //  sifnificado que usar conjuntamente la bandea '0' y el [ancho] con
+    //  significado que usar conjuntamente la bandea '0' y el [ancho] con
     //  la excepción de que la especificar una precisión hace que la bandera
     //  '-' sea ignorada mientras que si usas '0' junto con un ancho lo que
     //  se ignora es la bandera '0'.
@@ -264,13 +264,13 @@ int main(void)
     //  Solo el modificador '0' y el '-' son válidos.
     //  El ancho y la precisión funcionan de manera idéntica a los enteros
     //  signados.
-    //  Aparte de nunca imprimir signos, la grán diferencia que tiene la
+    //  Aparte de nunca imprimir signos, la gran diferencia que tiene la
     //  impresión de los enteros sin signo es que si le pasas un número
     //  negativo lo representará como un número positivo muy grande
 
     puts("\nMandando negativos a la impresión de enteros sin signo");
     printf(" <[%u]>\n", -99999); // El resultado aparecerá como un
-    printf(" <[%u]>\n", -666);   // positivo de grán tamaño.
+    printf(" <[%u]>\n", -666);   // positivo de gran tamaño.
     printf(" <[%u]>\n", -1);
 
     getchar();
@@ -324,8 +324,8 @@ int main(void)
 
     // Impresión en formato expandido (%f):
     //  Todos los modificadores son válidos en la impresión de con %f
-    //  El modificador númeral cambia el comportamiento de la precisión cero
-    //  asegurandose de que se imprima siempre un punto decimal.
+    //  El modificador numeral cambia el comportamiento de la precisión cero
+    //  asegurándose de que se imprima siempre un punto decimal.
     //  El modificador '+', ' ', '0' y '-' funcionan de manera idéntica a los
     //  enteros, no se pondrá mucho empeño en los ejemplos.
     //  Cabe aclarar que al especificar la longitud se toma en cuenta el
@@ -334,10 +334,10 @@ int main(void)
     puts("\nImprimiendo en formato expandido");
     printf(" <[%f]>\n", -5.5);   // Imprime sin relleno y con 5 decimales
     printf(" <[%.2f]>\n", 7.2);  // Imprime sin relleno y sin decimales
-    printf(" <[%8.2f]>\n", -2.1);// Rellena hasta acompletar 8 caracteres
-    printf(" <[%-8.2f]>\n", 2.1);// Rellena hasta acompletar 8 caracteres
+    printf(" <[%8.2f]>\n", -2.1);// Rellena hasta completar 8 caracteres
+    printf(" <[%-8.2f]>\n", 2.1);// Rellena hasta completar 8 caracteres
     printf(" <[%.f]>\n", 10.5);  // Imprime número sin decimales
-    printf(" <[%#+.f]>\n", 10.5);// Siempre imprime tanto signo como pundo
+    printf(" <[%#+.f]>\n", 10.5);// Siempre imprime tanto signo como punto
                                  // decimal
     printf(" <[% .f]>\n", 1e2);  // Si el número positivo imprime un espacio
 
@@ -348,7 +348,7 @@ int main(void)
     //  a la base.
     puts("\nImprimiendo en formato exponencial");
     printf(" <[%10.2e]>\n", 100.0); // Rellena hasta 10 caracteres con 2 decimales
-    printf(" <[%10.2E]>\n", 100.0); // Usa la letra 'E' mayuscula
+    printf(" <[%10.2E]>\n", 100.0); // Usa la letra 'E' mayúscula
     printf(" <[%#.E]>\n", 40.5);    // No imprime decimales pero si el punto
 
     getchar();
@@ -369,8 +369,8 @@ int main(void)
     puts("\nImprimiendo en formato inteligente");
     printf(" <[%g]>\n", -123.456);  // La impresión con %g solo muestra los
     printf(" <[%g]>\n", 5.45);      // decimales necesarios.
-    printf(" <[%10.1g]>\n", 5.456); // Solo se va a imprimir un dídito en la base
-    printf(" <[%10.1g]>\n", 545.6); // si ese digito no alcanza para los enteros
+    printf(" <[%10.1g]>\n", 5.456); // Solo se va a imprimir un dígito en la base
+    printf(" <[%10.1g]>\n", 545.6); // si ese dígito no alcanza para los enteros
                                     // entonces se forzará a que el número se
                                     // imprima en formato exponencial
 

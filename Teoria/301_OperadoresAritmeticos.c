@@ -106,7 +106,7 @@ int main(void)
 
     puts("Operadores aritméticos en la complejos:");
 
-    _Complex z1, z2;
+    _Complex double z1, z2;
     double * apt;
 
     puts("Ingrese dos números complejos en forma a+bi para operar con ellos");
@@ -125,10 +125,10 @@ int main(void)
     // correctos es pura coincidencia.
     printf("\t\t z1 = %f%+f*i \t z2 = %f%+f*i\n", z1, z2);
 
-    _Complex suma_compleja;
-    _Complex resta_compleja;
-    _Complex multi_compleja;
-    _Complex div_compleja;
+    _Complex double suma_compleja;
+    _Complex double resta_compleja;
+    _Complex double multi_compleja;
+    _Complex double div_compleja;
 
     suma_compleja  = z1 + z2;
     resta_compleja = z1 - z2;
