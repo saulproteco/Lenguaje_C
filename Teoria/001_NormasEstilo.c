@@ -1,14 +1,14 @@
 ﻿/*==================================*
  *   Normas de estilo para código   *
  *   establecidas por diferentes    *
- *   proyectos de software libre.   *
+ *   proyectos u organizaciones.    *
  *==================================*/
 
 /**
- * Autor: Martínez Ortíz Saúl Axel
+ * Autor: Martínez Ortiz Saúl Axel
  * Dificultad: Básico.
  * Requisitos: Bases de programación.
- * Estilo de código: Miscelaneo.
+ * Estilo de código: Misceláneo.
  */
 
 // Las normativas de estilo aquí presentadas son aplicadas al código
@@ -108,7 +108,7 @@ while (condición)
     código
   }
 
-do  // No hay otra forma para el do, pues se considera que ponerlo sin llavez es confuso
+do  // Se considera que no usar llaves en el do-while es confuso
   {
     código
   }
@@ -214,7 +214,7 @@ while (condición)
     código
 }
 
-do  // No hay otra forma para el do, pues se considera que ponerlo sin llavez es confuso
+do  // No hay otra forma para el do, pues se considera que ponerlo sin llaves es confuso
 {
     código
 }

@@ -5,36 +5,36 @@
  *                                                      *
  * Para mantener un programa lo suficientemente         *
  * ordenado para poder extenderlo es necesario          *
- * tener una buena organizaciOn en el.                  *
+ * tener una buena organización en el.                  *
  *                                                      *
  * En principio, esto se logra con el simple hecho      *
  * de separar la funcionalidad en funciones pero esta   *
  * mira se queda corta cuando se empieza a trabajar con *
  * proyectos medianamente grandes.                      *
  *                                                      *
- * En programas mAs grandes, la separaciOn no se harA   *
- * solo entre funciones, sino tambiEn en componentes    *
+ * En programas más grandes, la separación no se hará   *
+ * solo entre funciones, sino también en componentes    *
  * del programa.                                        *
  *                                                      *
- * Por ejemplo, si programaramos un juego, podriamos    *
+ * Por ejemplo, si programáramos un juego, podríamos    *
  * identificar unos cuantos componentes mayores que     *
- * se deberian realizar para elaborarlo por completo:   *
- * - Manejo de los grAficos.                            *
+ * se deberían realizar para elaborarlo por completo:   *
+ * - Manejo de los gráficos.                            *
  * - Manejo de los eventos.                             *
- * - LOgica interna del juego.                          *
- * - Sistema de guardado y serializaciOn de datos.      *
+ * - Lógica interna del juego.                          *
+ * - Sistema de guardado y serialización de datos.      *
  *                                                      *
  * Cada uno de esos componentes seria separado en un    *
  * subprograma llamado modulo. Este modulo no realiza   *
  * una sola tarea demasiados especifica como lo hacen   *
- * las funciones, por ello, deberA contener una         *
- * variedad de estas asI como su conjunto de variables  *
+ * las funciones, por ello, deberá contener una         *
+ * variedad de estas así como su conjunto de variables  *
  * etc, etc.                                            *
  *======================================================*/
 
 /* Las cabeceras se incluyen en todo lugar que requera las definiciones */
 #include <stdio.h>
-#include "cabecera.h" // Incluye prototipos y variables externas
+#include "C01_Cabecera.h" // Incluye prototipos y variables externas
 
 /*
  * Las variables globales sin modificador pueden potencialmente
@@ -55,17 +55,17 @@ int variable_global;
 static int variable_de_archivo;
 
 int regresa_valor(void) {
-    // La razOn de que las variables estAticas no se vean fuera del
+    // La razón de que las variables estáticas no se vean fuera del
     // archivo es que se restringe que su espacio sea reservado por
     // todo el tiempo de vida del programa y que las referencias a
-    // estas sean fijadas en tiempo de traducciOn.
-    // Dado que la traducciOn de archivos se hace individualmente no
+    // estas sean fijadas en tiempo de traducción.
+    // Dado que la traducción de archivos se hace individualmente no
     // es posible enlazar variables de otros archivos si dichas variables
-    // son estAticas.
+    // son estáticas.
 
-    // La siguiente declaraciOn hace que i sea una variable persistente
-    // a travEz de las diversas llamadas a la funciOn y hace que la
-    // inicializaciOn a 0 se ejecute solo una vez cuando dicha variable
+    // La siguiente declaración hace que i sea una variable persistente
+    // a travéz de las diversas llamadas a la función y hace que la
+    // inicialización a 0 se ejecute solo una vez cuando dicha variable
     // es creada.
     static int i = 0;
 
@@ -73,12 +73,12 @@ int regresa_valor(void) {
 }
 
 int main(void) {
-
+    (void) variable_de_archivo;
     // La variable var es externa, es decir, no es de este archivo.
-    // Para poder ver una variable externa es necesaria una definiciOn
+    // Para poder ver una variable externa es necesaria una definición
     // como la que sigue:
     //  extern int var;
-    // Dicha definiciOn suele estar en un archivo de cabecera para que
+    // Dicha definición suele estar en un archivo de cabecera para que
     // todos los archivos que requieran compartir esa variable puedan
     // hacerlo.
     //
@@ -94,7 +94,7 @@ int main(void) {
 
     funcion_inline();
 
-    // Probando la variable estAtica
+    // Probando la variable estática
     for (int i = 0; i < 100; i++) {
         printf("El valor es %d\n", regresa_valor());
     }

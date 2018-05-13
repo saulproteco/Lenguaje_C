@@ -3,7 +3,7 @@
  *=====================*/
 
 /**
- * Autor: Martínez Ortíz Saúl Axel
+ * Autor: Martínez Ortiz Saúl Axel
  * Dificultad: Básico.
  * Requisitos: Bases de lenguaje C y funcionamiento de la RAM.
  * Estilo de código: Linux modificado (4 espacios por tab).
@@ -15,16 +15,16 @@
 
 /* En C las condiciones son valores enteros, el valor 0 representa 'falso'  *
  * y cualquier otro valor representa 'verdadero'. Si una variable que no    *
- * sea un entero se usa en una condicional se compara implicitamente con el *
- * valor equivalente a 0 (0.0 en caso de los doubles y NULL en los          *
+ * sea un entero se usa en una condicional se compara implícitamente con el *
+ * valor equivalente a 0 (0.0 en caso de los dobles y NULL en los           *
  * apuntadores) y dado que toda comparación mediante el operador '=='       *
  * regresa un valor entero por lo que al final, siempre es un valor entero  *
- * lo que una comparación evalua.                                           */
+ * lo que una comparación evalúa.                                           */
 
 #define VERDAD  1
 #define MENTIRA 0
 
-int main(int argc, char *argv[])
+int main(void)
 {
 /* Para guardar los resultados de una condición en C se utilizaban enteros  *
  * lo cual no era los más optimo, hasta que C99 introdujo las variables     *
@@ -38,7 +38,7 @@ int main(int argc, char *argv[])
 /* Demostraremos algunas de las propiedades de los booleanos. En primer     *
  * lugar, es inseguro comparar un entero directamente con un valor          *
  * VERDAD porque ningún entero está limitado solo a cero y a uno, por ello  *
- * un entero siempre se debe comparar por su inigualdad con un valor        *
+ * un entero siempre se debe comparar por su desigualdad con un valor       *
  * MENTIRA.                                                                 */
     entero = 10;
     booleano = 10;
@@ -63,7 +63,7 @@ int main(int argc, char *argv[])
     printf("El valor de \"booleano\" es: %d\n", booleano);
 
 /* Si queremos guardar variables flotantes como valores de verdad en enteros *
- * estas se castean implicitamente a enteros por lo que se pierden los       *
+ * estas se castean implícitamente a enteros por lo que se pierden los       *
  * decimales. Esto puede conllevar a que el valor se vuelva falso de forma   *
  * inesperado. Este riesgo no existe con los booleanos pues como se dijo     *
  * antes, se comportan como una comparación.                                 */

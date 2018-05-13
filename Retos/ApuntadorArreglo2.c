@@ -1,9 +1,15 @@
-/*========================================*
- * Indique la salida del siguiente código *
- *========================================*/
+/*===================================*
+ * Apuntadores a arreglo, el retorno *
+ *===================================*/
+
+// *** Código sujeto a comportamiento indefinido ***
 
 #include <stdio.h>
 #include <math.h>
+
+/*
+ * Indique la salida del siguiente código
+ */
 
 int main(void)
 {
@@ -16,6 +22,4 @@ int main(void)
     ++apt;
 
     printf("% .f % .f\n", log10((*apt)[-1]), log10((*apt)[-2]));
-
-    return 0;
 }

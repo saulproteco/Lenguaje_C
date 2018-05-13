@@ -1,10 +1,14 @@
-/*=============================================*
- * Explique por que las siguientes sentencias  *
- * se ejecutan distinto con operaciones de     *
- * y con operaciones lógicas.                  *
- *=============================================*/
+/*==========================*
+ * Alerta de corto circuito *
+ *==========================*/
 
 #include <stdio.h>
+
+/*
+ * Explique por que las siguientes sentencias
+ * se ejecutan de forma diferente con operaciones de
+ * y con operaciones lógicas.
+ */
 
 int main(void)
 {
@@ -18,5 +22,5 @@ int main(void)
 
     putchar('\n');
     printf("%*s", 0, "") &  printf("2.- ¿Cómo estas?");
-    return 0;
+
 }

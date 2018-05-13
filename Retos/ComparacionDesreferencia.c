@@ -2,11 +2,18 @@
  * Comparación Apuntador-Desreferencia *
  *=====================================*/
 
+// *** ######################################### ***
+// *** ######################################################## ***
+// (Anotaciones censuradas porque espoilean la respuesta del ejercicio)
+
 #include <stdio.h>  // printf
 #include <stdlib.h> // EXIT_SUCCESS
 
-// Indique el resultado de la comparación mostrada y
-// explique las razones de dicho hecho.
+// Indique que imprime el siguiente código y
+// explique la razón de que el programa tenga
+// dicho comportamiento.
+//
+// ¿El programa funcionará igual en cualquier plataforma? Si, no y porque
 
 int main(void)
 {
@@ -16,6 +23,4 @@ int main(void)
         printf("Es verdad\n");
     else
         printf("Es mentira\n");
-
-    return EXIT_SUCCESS;
 }

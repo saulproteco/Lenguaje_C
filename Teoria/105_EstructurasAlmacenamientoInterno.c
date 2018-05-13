@@ -3,7 +3,7 @@
  *===========================================*/
 
 /**
- * Autor: Martínez Ortíz Saúl Axel
+ * Autor: Martínez Ortiz Saúl Axel
  * Dificultad: Intermedio.
  * Requisitos: Funciones, funcionamiento de la RAM.
  * Estilo de código: GNU.
@@ -11,27 +11,27 @@
 
 #include <stdio.h>      // printf
 #include <stdlib.h>     // EXIT_SUCCESS
+#include <stdint.h>
 #include <stdbool.h>    // bool, false, true
 
-#define BINARIO(estr) estructuraEnBinario(&estr, sizeof(estr))
-
-static void estructuraEnBinario (const void * const , int);
+#define BINARIO(estr) estructuraEnBinario((uint8_t *)&(estr), sizeof(estr))
+static void estructuraEnBinario (const uint8_t * estructura, int tamanio);
 
 int
-main (int argc, const char * argv[])
+main (void)
 {
     /* Una estructura debe ocupar en memoria por lo menos la cantidad   *
      * de espacio resultante de sumar lo que ocupan sus elementos. Esto *
-     * significa, que perfectamente pueden ocupar mAs espacio pero      *
+     * significa, que perfectamente pueden ocupar más espacio pero      *
      * nunca menos                                                      *
      * Aunque el criterio para ordenar los datos miembro puede depender *
-     * del sistema en que se trabaje, la mayoria de las veces se sigue  *
+     * del sistema en que se trabaje, la mayoría de las veces se sigue  *
      * un criterio para eficientar el tiempo a costa del espacio. El    *
-     * tamanio de las estructuras se establece en multiplos del tamanio *
+     * tamaño de las estructuras se establece en múltiplos del tamaño   *
      * de los registros del procesador, de tal forma que no haya que    *
-     * hacer operaciones para cargar/operar datos solo en una fracciOn  *
+     * hacer operaciones para cargar/operar datos solo en una fracción  *
      * de registro, para lo cual se tiene que hacer operaciones de      *
-     * restricciOn que hacen un poco mAs lento el proceso               */
+     * restricción que hacen un poco más lento el proceso.              */
 
     // Tomemos como ejemplo la siguiente estructura:
     struct miEstructura
@@ -43,7 +43,7 @@ main (int argc, const char * argv[])
     // Las variables correspondientes a este tipo de dato deben ocupar
     // al menos tres bytes aunque probablemente ocupen 4 bytes dado el
     // relleno generado para eficientar el uso de la estructura, por lo
-    // que las variables probablemente estarAn constituidas tal que asI:
+    // que las variables probablemente estarán constituidas tal que así:
     //  +dato1-+ +Relleno +------dato2----+
     //  |      | |      | |               |
     //  v      v v      v v               v
@@ -57,19 +57,19 @@ main (int argc, const char * argv[])
 
     // Vamos a comprobar si lo que dijimos es cierto imprimiendo los bits
     // de una estructura. Dato1 y dato2 se inicializan a -1 puesto que
-    // la representaciOn de dicho nUmero son unicamente unos
+    // la representación de dicho número son únicamente unos
     struct miEstructura var = { 0 }; // Se inicializa todo a 0
     var.dato1 = -1;
     var.dato2 = -1;
 
-    puts ("La representaciOn binaria de miEstructura es:");
+    puts ("La representación binaria de miEstructura es:");
     BINARIO (var);
 
     getchar ();
 
-    /* Agrupar los datos miembro de las estructuras segUn su tipo de    *
-     * dato promueve la asociaciOn de las variables por grupos lo que   *
-     * generalmente resultarA en una menor cantidad de espacio          *
+    /* Agrupar los datos miembro de las estructuras según su tipo de    *
+     * dato promueve la asociación de las variables por grupos lo que   *
+     * generalmente resultará en una menor cantidad de espacio          *
      * desperdiciado. Tomemos como ejemplo las siguientes estructuras   *
      * que contienen las mismas variables pero en diferente orden:      */
 
@@ -105,8 +105,8 @@ main (int argc, const char * argv[])
     getchar ();
 
     // Vamos a observar el contenido de las variables.
-    // Todos los short estan inicializados a -1 (solo unos) y todos
-    // los char a 0 (solo ceros en la representaciOn binaria).
+    // Todos los short están inicializados a -1 (solo unos) y todos
+    // los char a 0 (solo ceros en la representación binaria).
 
     puts ("El contenido de la estructura en desorden:");
     BINARIO (var_sinorden);
@@ -134,24 +134,24 @@ main (int argc, const char * argv[])
     /* El comportamiento por defecto del relleno es hacer que toda      *
      * variable se 'empaquete' en un cuarteto de bytes especifico.      *
      * Cuando un tipo de dato no cabe en el espacio restante del        *
-     * cuarteto inmediatamente salta la siguiente generandose un        *
+     * cuarteto inmediatamente salta la siguiente generándose un        *
      * relleno.                                                         *
      *                                                                  *
-     * Esisten formas de cambiar el comportamiento por defecto del      *
+     * Existen formas de cambiar el comportamiento por defecto del      *
      * empaquetado de datos en las estructuras, una de ellas es la      *
      * famosa directiva pack de los compiladores de microsoft, a la     *
      * cual varios compiladores han decidido darle compatibilidad.      *
-     * Esta directiva cambia el tamanio mInimo de empaquetado con lo    *
+     * Esta directiva cambia el tamaño mínimo de empaquetado con lo     *
      * cual se puede conseguir un menor desperdicio sin necesidad de    *
      * ordenar las variables (aunque puede haber perjuicios en tiempo   *
-     * de ejecuciOn) o se puede (remotamente, aunque no lo intentes a   *
-     * menos que sepas lo que haces) obtener menor desempenio a cambio  *
+     * de ejecución) o se puede (remotamente, aunque no lo intentes a   *
+     * menos que sepas lo que haces) obtener menor desempeño a cambio   *
      * de un mayor desperdicio de espacio.                              */
 
-    // Haremos una demostraciOn de la directiva pack con el mismo ejemplo
+    // Haremos una demostración de la directiva pack con el mismo ejemplo
     // de hace un momento
 
-    // Si el tamanio minimo de empaquetaciOn es 1 byte habrA menos relleno
+    // Si el tamaño mínimo de empaquetado es 1 byte habrá menos relleno
 #pragma pack(1)
     struct SinOrden2
     {
@@ -202,22 +202,22 @@ main (int argc, const char * argv[])
     // 11111111 11111111 11111111 11111111
     // 00000000 00000000 00000000 00000000
 
-    /* Las estructuras proveen una caracterIstica especial para manejar *
+    /* Las estructuras proveen una característica especial para manejar *
      * el almacenamiento de sus datos miembro: Los cambos de bits.      *
      * Un campo de bit es una variable entera cuyo espacio se ha        *
-     * limitado a un nUmero especIfico de bits.                         *
+     * limitado a un número específico de bits.                         *
      *                                                                  *
      * La sintaxis para declarar un miembro como campo de bits es:      *
      *                                                                  *
      *  <tipo_dato> <identificador> : <espacio>;                        *
      *                                                                  *
-     * Los campos de bits son Utiles cuano los campos de una estrucura  *
-     * solo pueden contener valores dentro de un rango especIfico por   *
-     * lo que es un desperdicio hacer la reserva de todos los bits que  *
-     * se tienen normalmente. Tomese por ejemplo una variable para      *
-     * representar el mes de un anio, cuyo rango es unicamente de       *
-     * 1 a 12 el cual puede representarse en 4 bits haciendo inUtil la  *
-     * utilizaciOn de todo un entero.                                   */
+     * Los campos de bits son útiles cuando los campos de una           *
+     * estructura solo pueden contener valores dentro de un rango       *
+     * específico por lo que es un desperdicio hacer la reserva de      *
+     * todos los bits que se tienen normalmente.                        *
+     * Tómese por ejemplo una variable para representar el mes de un    *
+     * año, cuyo rango es únicamente de 1 a 12 el cual puede            *
+     * representarse en 4 bits.                                         */
 
     struct noImportaElEspacio
     {
@@ -227,7 +227,7 @@ main (int argc, const char * argv[])
         long b;         // 4 bytes
         long long e;    // 8 bytes
     }; // La estructura completa ocupa al menos 16 bytes aunque
-        // lo mas seguro es que ocupe mAs
+        // lo mas seguro es que ocupe más
 
     printf("Tamaño de la estructura sin campos de bits: %zu\n",
             sizeof(struct noImportaElEspacio));
@@ -237,7 +237,7 @@ main (int argc, const char * argv[])
         _Bool a     : 1;        // 1 bit
         char  d     : 3;        // 3 bits
         short c     : 5;        // 5 bits
-        long  b     :  8;       // 16 bits
+        long  b     : 8;        // 8 bits
         long long e : 16;       // 16 bits
     };
 
@@ -254,20 +254,18 @@ main (int argc, const char * argv[])
     BINARIO (var_cadabit);
 
     /* Como se puede notar, la estructura 'cadaBitCuenta' formada solo *
-     * por campos de bits en total ocupa 32 bits, sin embargo y dado   *
-     * que esta sigue sujeta a la empaquetaciOn que suele separar las  *
-     * variables con distintos tipos de dAtos, lo mAs seguro es que    *
-     * el tamanio final sea mAs de los 4 bytes estipulados.            *
-     *                                                                 *
+     * por campos de bits en total ocupa 32 bits, sin embargo es muy   *
+     * posible que haya relleno entre los campos de bits dando como    *
+     * resultado una estructura de mayor tamaño.                       *
      * Siempre que manejes campos de bits, trata de que sean del mismo *
-     * tipo de entero y que esten agrupados de forma apartada de los   *
-     * miembros normales de la estructura lo cual reducira el espacio  *
+     * tipo de entero y que estén agrupados de forma apartada de los   *
+     * miembros normales de la estructura lo cual reducirá el espacio  *
      * necesario.                                                      *
-     * De no atender esta recomendaciOn, la estructura podria ocupar   *
+     * De no atender esta recomendación, la estructura podría ocupar   *
      * el mismo espacio que sin hacer uso de campos de bits pero con   *
      * menor eficiencia, dado que nuevamente, el procesador tiene que  *
-     * hacer operaciones extras para restringir las operaciones a unos *
-     * cuantos bits que no cubran el espacio de un registro.           */
+     * hacer operaciones extras para separar bits específicos de una *
+     * unidad.                                                         */
 
     struct camposAcomodados
     {
@@ -282,40 +280,40 @@ main (int argc, const char * argv[])
         float sueldo;   // 4 bytes
     }; // Al menos 40 bytes en total si no hay desperdicio
 
-    printf ("Tamanio de 'camposAcomodados': %zu\n",
+    printf ("Tamaño de 'camposAcomodados': %zu\n",
             sizeof(struct camposAcomodados));
 
-    /* Por último, una aclaraciOn quizas obvia pero importante: hay que *
+    /* Por último, una aclaración quizás obvia pero importante: hay que *
      * estar al pendiente de que los valores de los campos de bits no   *
      * se desborden (como en cualquier otra variable valla), pues el    *
-     * hecho de estar limitados en espacio hace mAs comUn el            *
+     * hecho de estar limitados en espacio hace más común el            *
      * desbordamiento, cosa que es raro observar con las variables      *
      * normales.                                                        *
-     * Si un campo de bit es usado en operaciones, cerA casteado al     *
-     * entero mAs inmediato que pueda contener su valor por lo que      *
+     * Si un campo de bit es usado en operaciones, será casteado al     *
+     * entero más inmediato que pueda contener su valor por lo que      *
      * hacerlo es valido aunque no es recomendado hacerlo en ciclos     *
-     * dado que podria representar una merma significativa en el        *
-     * desempenio del programa (si es un ciclo muy importante).         */
+     * dado que podría representar una merma significativa en el        *
+     * desempeño del programa (si es un ciclo muy importante).          */
     return EXIT_SUCCESS;
 }
 
 static void
 estructuraEnBinario (
-        const void * const estructura,  // Referencia generica
-        int tamanio )                   // Tamanio del dato recibido
+                     const uint8_t * estructura, // Dirección de la estructura
+                     int tamanio )               // Tamaño del dato recibido
 {
     for (int byte = 0; byte < tamanio; byte++)
-      {
-        char octeto = *(char *)(estructura + byte);
+        {
+            char octeto = *(char *)(estructura + byte);
 
-        for (int bit = 0b10000000; bit > 0; bit >>= 1)
-            putchar(octeto & bit ? '1' : '0');
+            for (int bit = 0b10000000; bit > 0; bit >>= 1)
+                putchar(octeto & bit ? '1' : '0');
 
-        putchar(' ');
+            putchar(' ');
 
-        if ( (byte + 1) % 4 == 0 )
-            putchar('\n');
-      }
+            if ( (byte + 1) % 4 == 0 )
+                putchar('\n');
+        }
 
     putchar('\n');
 }

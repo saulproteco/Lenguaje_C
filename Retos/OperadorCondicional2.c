@@ -1,10 +1,15 @@
-/*=====================================*
- * ¿Cómo se verá el patrón resultante? *
- *=====================================*/
+/*===========================*
+ * Un radio de posibilidades *
+ *===========================*/
 
 #include <stdio.h>  // putchar, getchar
 #include <stdlib.h> // EXIT_SUCCESS
 #include <math.h>   // sqrt
+
+/*
+ * Trate de visualizar la lo que imprimirá el
+ * siguiente código.
+ */
 
 #define ANCHO  40.0
 #define ESCALA  2.0

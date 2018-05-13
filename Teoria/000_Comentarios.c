@@ -3,7 +3,7 @@
  *==========================*/
 
 /**
- * Autor: Martínez Ortíz Saúl Axel
+ * Autor: Martínez Ortiz Saúl Axel
  * Dificultad: Básico.
  * Requisitos: Bases de programación y cadenas.
  * Estilo de código: Personalizado.
@@ -25,7 +25,8 @@
 
 // Además en el compilador de GNU, se puede continuar el comentario     \
    situando una antidiagonal al final de la línea. Como esta última     \
-   característica no es C estandar, se menciona básicamente para estar  \ advertidos y evitar usar esta característica por accidente.
+   característica no es C estándar, se menciona básicamente para estar  \
+   advertidos y evitar usar esta característica por accidente.
 
 #endif // __GNUC__
 
@@ -45,7 +46,7 @@ int main(void)
     Esta sección no es realmente un comentario, es código que será
     removido por el preprocesador antes de la "compilación efectiva".
     Este tipo de macros condicionales son útiles cuando se quieren remover
-    trozos de código que tienen comentarios multilínea.
+    trozos de código que tienen comentarios multi-línea.
     Sin embargo, las directivas condicionales son mucho más poderosas
     usadas junto con el resto de directivas de preprocesador, vea la
     sección C para más información.

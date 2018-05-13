@@ -4,7 +4,7 @@
  *===========================*/
 
 /**
- * Autor: Martínez Ortíz Saúl Axel
+ * Autor: Martínez Ortiz Saúl Axel
  * Dificultad: Básico.
  * Requisitos: Bases de lenguaje C.
  * Estilo de código: Microsoft.
@@ -15,24 +15,20 @@
 
 int main(void)
 {
-    /* Los tipos básicos se clasifican en las siguientes categorias:    *
-     * enteros, números de punto flotante y compuestos (En realidad el  *
-     * estandar establece que los compuestos son también numeros de     *
-     * punto flotante, pero algunas implementaciones aceptan además     *
-     * numeros compuestos de otros tipos).                              *
-     *
+    /* Los tipos básicos se clasifican en las siguientes categorías:    *
+     * enteros y números de punto flotante                              *
+     * Todos los tipos básicos dependen del sistema, ya sea en tamaño o *
+     * en comportamiento.                                               *
+     *                                                                  *
      * Las variables enteras y de punto flotante a su vez forman el     *
      * conjunto de las variables escalares mientras que el resto (con   *
-     * la exepción de los tipos enumerados) son los tipos compuestos.   *
-     * Los enteros, flotantes, complejos y los tipos enumerados forman  *
-     * el conjunto de los tipos escalares [1].
-     * se forman el grupo de las variables aritméticas.
-     * que el resto de variables son llamadas compuestas y se componen  *
-     * de una combinación de las anteriores.                            *
-     *                                                                  *
-     * Originalmente C solo tenia variables básicas escalares, sin      *
-     * embargo en C99 se incluyo el tipo complejo que prevalece como    *
-     * el único tipo básico compuesto.                                  *
+     * la excepción de los tipos enumerados) son los tipos compuestos,  *
+     * es decir, aquellos que se forman en base a otros tipos.          *
+     * Los enteros, flotantes (ya sean números reales o números         *
+     * complejos) y los tipos enumerados forman el conjunto de los      *
+     * tipos escalares [1].                                             *
+     * El resto de tipos son llamados compuestos y se componen de una   *
+     * combinación de los anteriores.                                   *
      *                                                                  *
      * A continuación el desglose de los varios subtipos de de cada     *
      * clasificación.                                                   */
@@ -44,10 +40,9 @@ int main(void)
      * enteros sin signo que solo almacenan positivos pero tienen el    *
      * doble de rango con el mismo espacio en memoria.                  *
      *                                                                  *
-     * Los enteros se caracterizan por que dan la vuelva a sus valores  *
-     * cuando una cantidad se sale de la capacidad de la variable, su   *
-     * tipo base es el "int" cuyo tamaño depende del sistema (suele     *
-     * oscilar entre 2 y 4 bytes).                                      *
+     * Los enteros sin signo dan la vuelta a su rango cuando se         *
+     * desbordan, mientras que los signados can en comportamiento       *
+     * indefinido.                                                      *
      *                                                                  *
      * La separación entre cada valor representado por un entero es     *
      * idéntica por lo que se trata de una representación de datos      *
@@ -119,20 +114,33 @@ int main(void)
      * el rango de un "int".                                        */
 
     // ##### Variables de punto flotante #####
-    /* Los flotantes no tienen una clasificación signada y otra no      *
-     * signada pero si tienen una clasificación por precisión con la    *
-     * que guardan los datos:
-     *  - Precisión media  / 16 bits - 4 decimales (No existen en c).
-     *  - Precisión simple /  32 bits - 7 decimales  -> float.
-     *  - Precisión doble  /  64 bits - 15 decimales  -> double.
-     *  - Precisión cuadruple / 128 bits  - 33 decimales -> long double.
+    /* Los tipos clasificados como punto flotante se dividen en reales  *
+     * y complejos, siendo estos últimos una adición de C99 que es      *
+     * opcional en C11.                                                 *
+     * La forma más común de punto flotante es la especificado por el   *
+     * estándar IEEE 754 de que clasifica los datos según la precisión: *
+     * que guardan los datos:                                           *
+     *  - Precisión media  / 16 bits - 4 decimales.                     *
+     *  - Precisión simple /  32 bits - 7 decimales                     *
+     *  - Precisión doble  /  64 bits - 15 decimales                    *
+     *  - Precisión cuadruple / 128 bits  - 33 decimales                *
      *                                                                  *
-     * Los flotantes no dan la vuelta a sus valores como lo hacian los  *
-     * enteros al desbordarse, estos más bien llegan a un 'límite' del  *
-     * cual no se moverán a pesar de continuar haciendo operaciones     *
-     * consecutivas. Su tamaño no depende del sistema, su tipo básico   *
-     * es el 'float' pero las literales flotantes (números que escribas *
-     * con decimales o en formato exponencial) son por defecto 'double'.*
+     * Las tipos de datos float, double y long double o sus equivalentes*
+     * complejos no tienen una longitud bien determinada ya que como    *
+     * cualquier cosa en C, dependen del compilador. Lo que si tienen   *
+     * es un requisito mínimo de que el tipo float y el double deben    *
+     * tener una presición equivalente o superior a un número de punto  *
+     * flotante IEEE 754 de presición media y que el float no puede ser *
+     * mayor que el double.                                             *
+     *                                                                  *
+     * Generalmente, los flotantes no dan vuelta a sus valores como lo  *
+     * hacen los enteros sin signo al desbordarse. En su lugar, llegan  *
+     * a un "límite" del cual ya no pasarán por falta de precisión en   *
+     * la representación.                                               *
+     *                                                                  *
+     * Las literales de punto flotante tiene por defecto el tipo        *
+     * double y para hacer una literal 'float' se debe añadir el sufijo *
+     * 'f' al final de un número flotante.                              *
      *                                                                  *
      * La separación entre cada valor representado por un flotante      *
      * va cambiando según las magnitudes representadas puesto que la    *
@@ -147,6 +155,7 @@ int main(void)
      * aplicarse con comparaciones en condicionales o ciclos ni tampoco *
      * para iterar en valores muy grandes.                              */
 
+    // Reales
     float  flotante1 = 5.5f;    // sufijo f
 
     double flotante2 = -7.2;    // Sin sufijo, las literales son double por defecto
@@ -154,7 +163,7 @@ int main(void)
     long double flotante3 = 3.141592653589793L; // Sufijo L al igual que en los enteros
                                                 // long, la diferencia es que esta
                                                 // literal tiene decimales.
-    puts("Los tamaños de los flotantes deberian ser 4, 8 y 16 bits:\n");
+    puts("Los tamaños de los flotantes deberían ser 4, 8 y 16 bits:\n");
     printf("El tamaño del float es:       %zu\n", sizeof(flotante1));
     printf("El tamaño del double es:      %zu\n", sizeof(flotante2));
     printf("El tamaño del long double es: %zu\n", sizeof(flotante3));
@@ -169,7 +178,7 @@ int main(void)
      * mientras que el signo de interrogación nos informa que dicho    *
      * signo es opcional en la sintaxis.                               */
 
-    // ##### Variables de tipo complejo ######
+    // Complejos
     /* Como se mencionó antes, los tipos de datos compuestos están      *
      * formados por varios datos escalares. Tal es el caso de los       *
      * complejos que funcionan como un adaptador de tipo de dato y se   *
@@ -195,8 +204,20 @@ int main(void)
      * compilador pero no las operaciones de entrada y salida lo que    *
      * puede dificultar un poco su uso.                                 */
 
-#ifndef __STDC_NO_COMPLEX__ // Si el compilador no soporta complejos
+#ifndef __STDC_NO_COMPLEX__ // Como los números complejos son opcionales
+                            // en C11, se debe revisar si la macro
+                            // __STDC_NO_COMPLEX__ no está definida
+#include <complex.h>
 
+    _Complex float       complejo10 = 5.5f + 5.5f * I;
+    _Complex double      complejo11 = -7.2 - 17.34e-20 * I;
+    _Complex long double complejo12 = 15.5L - 123e-12L * I;
+
+#ifdef __GNUC__
+    // El lenguaje estándar tiene complejos compuestos de tipos flotantes
+    // normales. Como extensión no estándar, el compilador GCC añade
+    // soporte para complejos compuestos por otros tipos de datos como los
+    // que siguien:
     _Complex signed char          complejo0 = +1   - 9999i;
     _Complex signed short int     complejo1 = -2   +  666i;
     _Complex signed int           complejo2 = +3   -   33i;
@@ -208,14 +229,15 @@ int main(void)
     _Complex unsigned int           complejo7 = 3u   + 10ui;
     _Complex unsigned long int      complejo8 = 4uL  + 9uLi;
     _Complex unsigned long long int complejo9 = 5uLL + 8uLLi;
-
-    _Complex float       complejo10 = 5.5f + 5.5fi;
-    _Complex double      complejo11 = -7.2 - 17.34e-20i;
-    _Complex long double complejo12 = 15.5L - 123e-12Li;
+#endif
 
     puts("Los tamaños de los complejos deben ser el "
          "doble del tipo de dato que almacenan\n");
 
+    printf("Tamaño de _Complex float:       %zu\n", sizeof(complejo10));
+    printf("Tamaño de _Complex double:      %zu\n", sizeof(complejo11));
+    printf("Tamaño de _Complex long double: %zu\n", sizeof(complejo12));
+#ifdef __GNUC__
     printf("Tamaño de _Complex char:      %zu\n", sizeof(complejo0));
     printf("Tamaño de _Complex short:     %zu\n", sizeof(complejo1));
     printf("Tamaño de _Complex int:       %zu\n", sizeof(complejo2));
@@ -227,10 +249,8 @@ int main(void)
     printf("Tamaño de _Complex unsigned:           %zu\n", sizeof(complejo7));
     printf("Tamaño de _Complex unsigned long:      %zu\n", sizeof(complejo8));
     printf("Tamaño de _Complex unsigned long long: %zu\n", sizeof(complejo9));
+#endif
     putchar('\n');
-    printf("Tamaño de _Complex float:       %zu\n", sizeof(complejo10));
-    printf("Tamaño de _Complex double:      %zu\n", sizeof(complejo11));
-    printf("Tamaño de _Complex long double: %zu\n", sizeof(complejo12));
     getchar();
 
 #endif // __STDC_NO_COMPLEX__

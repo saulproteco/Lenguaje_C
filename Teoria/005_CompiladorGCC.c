@@ -3,18 +3,18 @@
  *========================*/
 
 /**
- * Autor: Martínez Ortíz Saúl Axel
+ * Autor: Martínez Ortiz Saúl Axel
  * Dificultad: Intermedio.
  * Requisitos: Manejo de la terminal.
  * Estilo de código: Google.
  */
 
 /* Las opciones de compilación mostradas funcionan gcc o en compiladores    *
- * del mismo estilo como cywin, clang, musl (que en realidad es una         *
+ * del mismo estilo como mingw-gcc, clang, musl (que en realidad es una     *
  * envoltura de gcc).                                                       *
  *                                                                          *
  * Para compilar un proyecto con gcc se usa la siguiente sintaxis:          *
- *      gcc [comandos...] archivo_entrada [otros_archivos_entrada...]       *
+ *      gcc [comandos...] [archivos_entrada...]                             *
  *                                                                          *
  * Un proyecto se compone de mínimo un archivo fuente y en general no hay   *
  * límites impuestos por los compiladores actuales.                         */
@@ -35,6 +35,7 @@ double suma(double a, double b) {
 #include <stdio.h>
 #include <stdlib.h>
 #include <errno.h>
+#include <assert.h>
 
 int main(int argc, char * argv[]) {
     int num1, num2;
@@ -56,37 +57,37 @@ int main(int argc, char * argv[]) {
     return 0;
 }
 
-/* Para compilar el siguiente con el estandar C11 se puede usar el          *
+/* Para compilar el siguiente con el estándar C11 se puede usar el          *
  * siguiente comando:                                                       *
  *      gcc -std=c11 funcion.c principal.c -o nombre_proyecto               *
  *                                                                          *
  * El estandar a utilizar determina las caracteristicas del lenguaje a las  *
- * que tendriamos acceso y a su vez el grado de compatibilidad con las      *
- * distintas plataformas. Por ejemplo, si se stablece la compilación para   *
+ * que tendremos acceso y a su vez el grado de compatibilidad con las       *
+ * distintas plataformas. Por ejemplo, si se establece la compilación bajo  *
  * el estandar c89 (-std=c89 ó -std=c90) se tendrá acceso a menos           *
- * caracteristicas del lenguaje pero habrá compatibilidad con casi todas    *
+ * características del lenguaje pero habrá compatibilidad con casi todas    *
  * las plataformas.                                                         *
  *                                                                          *
- * Mediante la opción -o se puede establecer el nombre de que tendra el     *
- * binario de salida resultante de la compilación de todos los archivos.    */
+ * La opción -o por su parte establece el nombre del binario o archivo      *
+ * resultante de la compilación.                                            */
 
 /* Volviendo a nuestro ejemplo, el código anterior tiene un bug evidente    *
  * Ya que intenta imprimir una variable de tipo 'double' con el formato %d  *
  * en el printf. Asumiendo que dicho error no haya sido detectado aún, hay  *
- * multiples comandos que instruyen al compilador para revisar de manera    *
- * especialmente exhaustivo emitiendo más advertencias que ayudan al        *
+ * múltiples banderas que instruyen al compilador para revisar de manera    *
+ * especialmente exhaustiva emitiendo más advertencias que ayudan al        *
  * programador a identificar erroes.                                        *
  * La lista completa se puede encontrar viendo el manual de gcc             *
  * pero algunos de los más útiles son:                                      *
  *      > -Wall y - Wextra: Activar todas las advertencias a la vez.        *
- *      > -pedantic : El compilador sigue de manera estricta el estandar.   *
+ *      > -pedantic: Advertencias sobre problemas de compatibilidad.        *
  * Si añadimos esas opciones en la compilación nuestro comando queda como   *
  * el siguiente:                                                            *
  *                                                                          *
  *   gcc -std=c11 -Wall -Wextra funcion.c principal.c -o nombre_proyecto    */
 
 /* Asumiendo que las advertencias del compilador ayudaron a corregir el     *
- * problema, el código ahora se veria como el que sigue:                    */
+ * problema, el código ahora se vería como el que sigue:                    */
 
 // Archivo fuente 1.
 // funcion.c
@@ -134,15 +135,15 @@ int main(int argc, char * argv[])
  * es -g, con la cual la compilación se vería así.                          *
  *  gcc -std=c11 funcion.c principal.c -g -o nombre_proyecto                *
  *                                                                          *
- * Nota: Igualmente podrian resultar utiles en el proceso de depuración ver *
+ * Nota: Igualmente podrian resultar útiles en el proceso de depuración ver *
  *       las versiones intermedias de la traducción que genera el compilador*
- *       a travez de sus diferentes etapas, por ejemplo, la opción -E genera*
+ *       a través de sus diferentes etapas, por ejemplo, la opción -E genera*
  *       el código resultante de la etapa de preprocesado, la opción -S     *
  *       genera el resultado del ensamblador (llamado igualmente código     *
  *       ensamblador). También se puede usar la opción --save-temps para    *
  *       que el compilador conserve todos los archivos intermedios.         *
  *                                                                          *
- * Después de usar GDB, el código resultaria similar a :                    */
+ * Después de usar GDB, el código resultaría similar a :                    */
 
 // Archivo fuente 1.
 // funcion.c
@@ -186,14 +187,14 @@ int main(int argc, char * argv[])
  * distribución como:                                                       *
  *      > -O[n] con n=0,1,2,3: Establece el grado de optimización que debe  *
  *                             aplicar el compilador al código.             *
- *      > -DNDEBUG           : Afecta las macros de la biblioteca estandar  *
+ *      > -DNDEBUG           : Afecta las macros de la biblioteca estándar  *
  *                             que ayudan a la depuración (assert)          *
  *                             eliminando su efecto en el binario.          *
  * El comando de compilación en esta ocación resultaria:                    *
  *      gcc -std=c11 -O3 -DNDEBUG funcion.c principal.c -o nombre_proyecto  *
  *                                                                          *
  * Nota: Un grado alto de optimización no solo resulta útil cuando se       *
- *       compila el binario para distribución, también pueden ayudar en el  *
- *       diagnostico de errores en algunas ocaciones, sin embargo, alenta   *
+ *       compila el binario para distribución, también pueden causar que se *
+ *       emitan algunas advertencias extra. Sin embargo, su uso alenta      *
  *       considerablemente el tiempo de compilación en proyectos grandes.   */
 

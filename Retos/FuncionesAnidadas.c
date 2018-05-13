@@ -1,9 +1,16 @@
-/*==============================================*
- * Explique el siguiente código y que conceptos *
- * implica. Posteriormente simplifiquelo.       *
- *==============================================*/
+/*=================================*
+ * Mi cordura como programador por *
+ *            un 10                *
+ *=================================*/
+
+// *** Código específico de gcc ***
 
 #include <stdio.h>
+
+/*
+ * Explique el siguiente código y que conceptos
+ * implica. Posteriormente simplifíquelo.
+ */
 
 int main(void)
 {
@@ -24,6 +31,4 @@ int main(void)
     {
         printf("i es: %d\n", i);
     }
-
-    return 0;
 }

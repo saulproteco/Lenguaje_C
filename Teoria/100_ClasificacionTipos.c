@@ -14,8 +14,7 @@
  *      > Arreglos ............................................ 106
  *      > Estructuras ......................................... 104-105
  *      > Uniones ............................................. 104
- *      > Funciones (Si, también son un tipo de dato y no solo. 5XX
- *                   refiriendose a los apuntadores a función)
+ *      > Funciones (Si, también son un tipo de dato........... 5XX
  *      > Tipos incompletos ................................... ???
  *
  */

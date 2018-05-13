@@ -4,7 +4,7 @@
  *==================*/
 
 /**
- * Autor: Martínez Ortíz Saúl Axel
+ * Autor: Martínez Ortiz Saúl Axel
  * Dificultad: Básico.
  * Requisitos: Bases del lenguaje C.
  * Estilo de código: Google.
@@ -17,8 +17,8 @@
  * comenzando en 0 a menos que se les de un valor de manera explicita.  *
  * La forma de definir las uniones es similar a la de las estructuras:  *
  *  enum [nombre_union] {                                               *
- *          CONSTANTE1 [ = valor ] [,]   Se usa ',' en lugar de ';'     *
- *          [CONSTANTE2 [ = valor2 ] [,]...]                            *
+ *          CONSTANTE1 [ = valor ] ,   Se usa ',' en lugar de ';'       *
+ *          [, CONSTANTE2 [ = valor2 ] [,]...]                          *
  *  } [ variable_enumeracion = [ constante ]...];                       *
  *                                                                      *
  * La diferencia con las estructuras y uniones es que las entidades     *
@@ -36,7 +36,7 @@
 
 enum /* enumeracionGlobal */ { // No es necesario poner nombre a la enumeración
                                // si solo se quieren usar las constantes.
-                               // Require la etiqueta si se quieren declarar
+                               // Requiere la etiqueta si se quieren declarar
                                // variables con dicho tipo.
     A = 1,
     B = 0,
@@ -73,7 +73,7 @@ int main(int argc, char *argv[]) {
 /* Las enumeraciones facilitan la modificación del programa y aumentan la   *
  * verbosidad del código, no obstante siguen bastante limitadas en lenguaje *
  * C a comparación de otros lenguajes. Algunas de las ventajas que pueden   *
- * tener es que a diferencia de multiples #define's el compilador puede     *
+ * tener es que a diferencia de múltiples #define's el compilador puede     *
  * advertir que no estamos tratando todos los casos de la enumeración en un *
  * switch cuando usamos la bandera -Wall                                    */
 

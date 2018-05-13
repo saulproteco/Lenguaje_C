@@ -3,9 +3,9 @@
  *=======================*/
 
 /**
- * Autor: Martínez Ortíz Saúl Axel
+ * Autor: Martínez Ortiz Saúl Axel
  * Dificultad: Básico.
- * Requisitos: Manejo de entrada/salída, estructuras de control.
+ * Requisitos: Manejo de entrada/salida, estructuras de control.
  * Estilo de código: Linux modificado (4 espacios por tab).
  */
 
@@ -29,7 +29,7 @@ int main(void)
 
     // struct NombreEstructura se usa en sustitución del tipo de dato
     struct nombreEstructura es1 = { .dato3 = true, .dato1 = 0, 'B' }; // Inicialización estática
-    // Dentro de la inicialización estática se pueden inicializar dátos
+    // Dentro de la inicialización estática se pueden inicializar datos
     // en desorden usando la clave de acceso de cada uno.
     struct nombreEstructura es2;
 
@@ -53,20 +53,20 @@ int main(void)
     union tipoUnion un3 = { .a = 10, .b = 102.0 }; // No tiene sentido inicializar dos de los campos, solo conserva uno y el otro se sobreescribe
 
     puts("\nUniones:");
-    printf("Union 1: %d %f\n", un1.a, un1.b);
-    printf("Union 2: %d %f\n", un2.a, un2.b);
-    printf("Union 3: %d %f\n", un3.a, un3.b);
-    printf("Union 4 (sin inicializar): %d %f\n", un4.a, un4.b);
+    printf("Unión 1: %d %f\n", un1.a, un1.b);
+    printf("Unión 2: %d %f\n", un2.a, un2.b);
+    printf("Unión 3: %d %f\n", un3.a, un3.b);
+    printf("Unión 4 (sin inicializar): %d %f\n", un4.a, un4.b);
 
-    // Uniones y estructuras anonimas
+    // Uniones y estructuras anónimas
     struct { // La estructura no tiene nombre
         char a;
         char b;
     } anonima1, anonima2; // Solo se pueden declarar variables tras la definición
-                        // Por lo tanto los dátos de tipo estructura
-                        // anonima son Unicos en su tipo, no pueden
-                        // pasarse a funciones y ser nombrados de alguna
-                        // otra forma.
+                          // Por lo tanto los datos de tipo estructura
+                          // anónima son únicos en su tipo, no pueden
+                          // pasarse a funciones y ser nombrados de alguna
+                          // otra forma.
 
     union {
         int a;
@@ -74,7 +74,7 @@ int main(void)
     } sin_nombre1, sin_nombre2;
 
 
-    // Datos miembro anonimos
+    // Datos miembro anónimos
     struct estructuraAnidada {
         char tipo;
 

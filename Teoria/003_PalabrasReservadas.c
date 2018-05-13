@@ -4,7 +4,7 @@
  *==========================================================*/
 
 /**
- * Autor: Martínez Ortíz Saúl Axel
+ * Autor: Martínez Ortiz Saúl Axel
  * Dificultad: Básico.
  * Requisitos: Bases de lenguaje C.
  * Estilo de código: GNU.
@@ -67,6 +67,9 @@ inline
 _Noreturn
 _Thread_local
 
+// ##### Otras palabras (no son palabras reservadas pero conviene no
+// ##### usarlas)
+
 /* Macros predefinidas */
 __FILE__
 __LINE__
@@ -77,16 +80,12 @@ __STDC_VERSION__
 __func__
 
 /* Manejo de macros */
-_Generic
 __VA_ARGS__
 
-/* Macros que pueden o no estar definidas */
-__STDC_HOSTED__
-__cplusplus
-__OBJC__
-__ASSEMBLER__
-
-/* Extensiones de GCC no estandar */
+/*
+ * Extensiones de GCC no estándar (funcionan similar a palabras
+ * reservadas)
+ */
     /* Tipos de datos */
     __int128
     __float128

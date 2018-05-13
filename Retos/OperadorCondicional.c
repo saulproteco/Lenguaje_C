@@ -1,10 +1,14 @@
-/*=====================================*
- * Indique el resultado tras evalua el *
- *        operador condicional         *
- *=====================================*/
+/*====================*
+ * Locura condicional *
+ *====================*/
 
 #include <stdio.h>  // printf
 #include <stdlib.h> // EXIT_SUCCESS
+
+/*
+ * Indique el resultado tras evaluar el
+ *        operador condicional
+ */
 
 int main(void)
 {
@@ -19,3 +23,4 @@ int main(void)
 
     return EXIT_SUCCESS;
 }
+

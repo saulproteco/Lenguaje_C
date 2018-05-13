@@ -1,11 +1,16 @@
-/*==============================================*
- * Ejecute el siguiente código y luego explique *
- *                  su salida                   *
- *==============================================*/
+/*======================*
+ * Números ¿Aleatorios? *
+ *======================*/
+
+// *** Código con comportamiento definido por la implementación ***
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <stdbool.h>
+
+/*
+ * Ejecute el siguiente código y luego explique
+ * su salida
+ */
 
 #ifdef _WIN32
 static int valores[] = { 324, 179, 335, 18, 155, 100, 181, 22, 19, 179, 145 };

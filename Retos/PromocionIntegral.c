@@ -1,8 +1,12 @@
-/*========================================*
- * Encuentre el error lógico y expliquelo *
- *========================================*/
+/*=========================*
+ * Menos uno mayor que uno *
+ *=========================*/
 
 #include <stdio.h>
+
+/*
+ * Encuentre el error lógico y explíquelo
+ */
 
 int main(void)
 {
@@ -13,6 +17,4 @@ int main(void)
     } else {
         printf("Uno es mayor o igual que menos uno\n");
     }
-
-    return 0;
 }

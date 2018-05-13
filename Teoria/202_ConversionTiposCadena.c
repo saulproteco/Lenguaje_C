@@ -3,7 +3,7 @@
  *=======================*/
 
 /**
- * Autor: Martínez Ortíz Saúl Axel
+ * Autor: Martínez Ortiz Saúl Axel
  * Dificultad: Intermedio.
  * Requisitos: Cadenas, especificadores de formato, apuntadores;
  * Estilo de código: Microsoft.

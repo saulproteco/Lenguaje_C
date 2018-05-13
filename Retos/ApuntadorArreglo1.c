@@ -1,9 +1,15 @@
 /*==============================================*
- *     ¿El válido el código a continuación?     *
- * En caso de serlo indique cual será su salida *
+ * El ataque de los apuntadores a arreglo ninja *
  *==============================================*/
 
+// *** Código sujeto a comportamiento indefinido ***
+
 #include <stdio.h>
+
+/*
+ * ¿El válido el código a continuación?
+ * En caso de serlo indique cual será su salida
+ */
 
 int main(void)
 {
@@ -13,6 +19,4 @@ int main(void)
     printf("%d %d %d %d %d %d\n",
             *(arr + 1), *(arr + 3), *(arr + 5),
             *(apt - 1), *(apt - 3), *(apt - 5));
-
-    return 0;
 }

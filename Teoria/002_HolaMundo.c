@@ -6,7 +6,7 @@
 #include <stdlib.h>     // EXIT_SUCCESS (macro con valor 0)
 
 /**
- * Autor: Martínez Ortíz Saúl Axel
+ * Autor: Martínez Ortiz Saúl Axel
  * Dificultad: Básico.
  * Requisitos: Bases de programación.
  * Estilo de código: GNU.
@@ -28,16 +28,16 @@
 //            (por convención, 0 significa éxito y cualquier otro número
 //            significa fallo).
 //
-// El estandar de C también acepta otra forma para el main la cual no
-// recibe argumentos. Sin embargo, hay diversas formas alternativas del
-// main que no van acordes con el estandar y que dependen del compilador
+// El estándar de C también acepta otra forma para el main la cual no
+// recibe argumentos. También hay otras formas alternativas del main
+// main que no van acordes con el estándar y que dependen del compilador
 // o de la plataforma, por ejemplo, el compilador de GNU puede recibir un
 // argumento extra que es un apuntador a las variables de entorno del
 // sistema, generalmente llamado "envp".
 
 #define IGNORAR_ADVERTENCIA_DE_VARIABLE_SIN_USAR(x) (void) x
 
-int // Tipo de retorno entero por defecto, se puede omitir
+int // Tipo de retorno entero por defecto, se puede omitir en C89
 main (
         int contador_argumentos,
         char * vector_argumentos[]
@@ -49,14 +49,12 @@ main (
 
     IGNORAR_ADVERTENCIA_DE_VARIABLE_SIN_USAR(contador_argumentos);
     IGNORAR_ADVERTENCIA_DE_VARIABLE_SIN_USAR(vector_argumentos);
-
 #ifdef __GNUC__
     IGNORAR_ADVERTENCIA_DE_VARIABLE_SIN_USAR(apuntador_variables_entorno);
 #endif
 
     puts ("¡Hola mundo!"); // Imprime el mensaje.
-
-    getchar (); // Espera a que se presione enter antes de salír.
+    getchar (); // Espera a que se presione enter antes de salir.
 
     return EXIT_SUCCESS;    // Regresa 0, es decir éxito
 }

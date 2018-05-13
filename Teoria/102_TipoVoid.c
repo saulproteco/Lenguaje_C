@@ -3,7 +3,7 @@
  *=========================*/
 
 /**
- * Autor: Martínez Ortíz Saúl Axel
+ * Autor: Martínez Ortiz Saúl Axel
  * Dificultad: Básico.
  * Requisitos: Bases de lenguaje C.
  * Estilo de código: GNU.
@@ -17,18 +17,16 @@ main (void)
 {
     /* El tipo void es un tipo de dato especial que no entra dentro de  *
      * la clasificación del resto. Esto se debe a que es un tipo del    *
-     * cual no se puden declarar variables.                             *
+     * cual no se pueden declarar variables.                            *
      *                                                                  *
-     * Su uso es principalmente como como requisito semántico para      *
+     * Su uso es principalmente como requisito semántico para           *
      * indicar una lista de parámetros vacía o una función que no tiene *
      * valor de retorno. Sin embargo también puede ser usado para       *
      * anular el resultado de operaciones y para hacer uso de punteros  *
      * genéricos.                                                       */
 
-    // Las variables de tipo void no existen, por lo que la siguiente línea
-    // es semanticamente incorrecta. Descomente para corroborar.
-
-    /*void variable;*/
+    // Las variables de tipo void no existen
+    // void variable; // Error, no se puede declarar una variable void
 
     // Sin embargo, resulta que el tipo de dato void tiene un tamaño, el
     // cual corresponde con la mínima resolución referenciable en la
@@ -39,7 +37,7 @@ main (void)
 
     printf ("El tamaño de \"void\" es: %zu\n", sizeof(void));
 
-    // Esa última caracteristica permite que, aunque una variable void
+    // Esa última característica permite que, aunque una variable void
     // no pueda ser usada, el crear y manipular punteros a void sea
     // posible. Dichos punteros, conocidos como punteros universales,
     // son capaces de referenciar cualquier dirección de memoria dado que
@@ -48,10 +46,10 @@ main (void)
     // el uso de dichos punteros.
 
 
-    // En C, el uso de la palabra void no suele ser implicito como en otros
-    // lenguales (en los que se incluye C++). Por ejemplo, cuando queremos
+    // En C, el uso de la palabra void no suele ser implícito como en otros
+    // lenguajes (en los que se incluye C++). Por ejemplo, cuando queremos
     // declarar el prototipo de una función que no reciba argumentos, si
-    // no usamos la palabra void explicitamente lo que el compilador
+    // no usamos la palabra void explícitamente lo que el compilador
     // realmente entiende es que no debe hacer ninguna revisión sobre las
     // llamadas a la función. Ejemplo:
     //  Si declaramos:
@@ -74,21 +72,21 @@ main (void)
     //
     //      int funcion()
     //
-    // Moraleja, siempre usar explicitamente la palabra void en donde
+    // Moraleja, siempre usar explícitamente la palabra void en donde
     // esta sea requerida (al menos en C).
 
 
     // El último uso que se mencionaba de la palabra void es el suprimir
-    // el valor de algúna expresión. Lo cuál se hace mediante la
+    // el valor de alguna expresión. Lo cuál se hace mediante la
     // sintaxis de una conversión de tipos, situando la palabra void entre
-    // parénntesis justo antes de la expresión cuyo valor se quiere
+    // paréntesis justo antes de la expresión cuyo valor se quiere
     // suprimir.
 
     (void) printf ("El retorno del printf se va a ignorar\n");
 
     // Suprimir valores hace imposible usarlos en una expresión pero
-    // también silencia las advertencias del compilador sugiriendonos hacer
-    // uso del valor de retorno de una función.
+    // también silencia las advertencias del compilador que se generan
+    // cuando ignoramos algún valor.
 
     return EXIT_SUCCESS;
 }
