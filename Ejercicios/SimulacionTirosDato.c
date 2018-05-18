@@ -61,13 +61,13 @@ void regresar_cursor(void);
 // La declaración verdadera de la estructura
 struct opt {
     bool     esperar_cada_pantallazo : 1;  // Solo un bit (0 o 1)
-    uint64_t alto_pantalla           : 10; // Solo 9 bits (0 - 1023)
-    uint64_t largo_pantalla          : 10; // Solo 9 bits (0 - 1023)
-    uint64_t numero_dados            : 8;  // Solo 4 bits (0 - 255)
-    uint64_t cantidad_tiros          : 35; // Solo 9 bits (0 - ...)
+    uint64_t alto_pantalla           : 10; // Solo  9 bits (0 - 1023)
+    uint64_t largo_pantalla          : 10; // Solo  9 bits (0 - 1023)
+    uint64_t numero_dados            : 8;  // Solo  8 bits (0 - 255)
+    uint64_t cantidad_tiros          : 35; // Solo 35 bits (0 - ...)
 };
 
-// Función principal, principalmente menaje los argumentos del programa
+// Función principal, principalmente manaje los argumentos del programa
 int main(int argc, char * argv[]) {
     char opcion;
     // Valores por defecto
