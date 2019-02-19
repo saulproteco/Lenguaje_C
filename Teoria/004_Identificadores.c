@@ -110,7 +110,7 @@ int main(void)
      | global tendría una longitud de 24 caracteres y estaría cerca del |
      | límite permitido.                                                */
 
-    /* Los códigos de punto universales son una forma indirecta de      |
+    /* Los punto de código universales son una forma indirecta de       |
      | colocar símbolos no ASCII en el código fuente. Sin embargo hay   |
      | lenguajes que pueden colocar esos símbolos directamente.         |
      | Si una función de C es llamada desde uno de esos lenguajes, se   |
